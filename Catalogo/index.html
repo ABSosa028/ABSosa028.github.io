@@ -389,7 +389,7 @@
             button.className = 'btn btn-primary';
             button.textContent = 'Pedir';
             button.addEventListener('click', function () {
-                shareProduct(producto.img);
+                shareProduct(producto.Cod);
             });
             cardBody.appendChild(button);
 
@@ -399,7 +399,7 @@
         }
 
         function shareProduct(imageUrl) {
-            var whatsappUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(imageUrl);
+            var whatsappUrl = 'https://api.whatsapp.com/send?phone=+50233873562&text=' + encodeURIComponent(imageUrl);
             window.open(whatsappUrl);
         }
 
