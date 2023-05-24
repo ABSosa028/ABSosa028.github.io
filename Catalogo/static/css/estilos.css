@@ -18,6 +18,9 @@
     }
     
 }
+.navbar{
+  font-family: 'Arial', monospace;
+}
 .navbar-toggler{
   margin-right: 20px;
 }
