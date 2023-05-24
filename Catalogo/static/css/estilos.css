@@ -18,7 +18,12 @@
     }
     
 }
-
+.navbar-toggler{
+  margin-right: 20px;
+}
+.navbar-nav{
+  margin-left: 25px;
+}
 .jeader{
     background-color: black;
     color: white;
