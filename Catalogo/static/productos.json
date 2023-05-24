@@ -2,59 +2,59 @@
     {"Marca": "Ranch & Corral",
     "Productos": [
         {"Cod": "RC-001",
-        "img": "images/Ranch&Corral/1.jpeg",
+        "img": "static/images/Ranch&Corral/1.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-002",
-        "img": "images/Ranch&Corral/2.jpeg",
+        "img": "static/images/Ranch&Corral/2.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-003",
-        "img": "images/Ranch&Corral/3.jpeg",
+        "img": "static/images/Ranch&Corral/3.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-004",
-        "img": "images/Ranch&Corral/4.jpeg",
+        "img": "static/images/Ranch&Corral/4.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-005",
-        "img": "images/Ranch&Corral/5.jpeg",
+        "img": "static/images/Ranch&Corral/5.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-006",
-        "img": "images/Ranch&Corral/6.jpeg",
+        "img": "static/images/Ranch&Corral/6.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-007",
-        "img": "images/Ranch&Corral/7.jpeg",
+        "img": "static/images/Ranch&Corral/7.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-008",
-        "img": "images/Ranch&Corral/8.jpeg",
+        "img": "static/images/Ranch&Corral/8.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-009",
-        "img": "images/Ranch&Corral/9.jpeg",
+        "img": "static/images/Ranch&Corral/9.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-010",
-        "img": "images/Ranch&Corral/10.jpeg",
+        "img": "static/images/Ranch&Corral/10.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-011",
-        "img": "images/Ranch&Corral/11.jpeg",
+        "img": "static/images/Ranch&Corral/11.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-012",
-        "img": "images/Ranch&Corral/12.jpeg",
+        "img": "static/images/Ranch&Corral/12.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-013",
-        "img": "images/Ranch&Corral/13.jpeg",
+        "img": "static/images/Ranch&Corral/13.jpeg",
         "Precio": 1000
         },
         {"Cod": "RC-014",
-        "img": "images/Ranch&Corral/14.jpeg",
+        "img": "static/images/Ranch&Corral/14.jpeg",
         "Precio": 1000
         }
         ]
@@ -62,131 +62,131 @@
     {"Marca": "JC Hats",
     "Productos":[
         {"Cod": "JC-001",
-        "img": "images/JCHats/1.jpeg",
+        "img": "static/images/JCHats/1.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-002",
-        "img": "images/JCHats/2.jpeg",
+        "img": "static/images/JCHats/2.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-003",
-        "img": "images/JCHats/3.jpeg",
+        "img": "static/images/JCHats/3.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-004",
-        "img": "images/JCHats/4.jpeg",
+        "img": "static/images/JCHats/4.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-005",
-        "img": "images/JCHats/5.jpeg",
+        "img": "static/images/JCHats/5.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-006",
-        "img": "images/JCHats/6.jpeg",
+        "img": "static/images/JCHats/6.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-007",
-        "img": "images/JCHats/7.jpeg",
+        "img": "static/images/JCHats/7.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-008",
-        "img": "images/JCHats/8.jpeg",
+        "img": "static/images/JCHats/8.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-009",
-        "img": "images/JCHats/9.jpeg",
+        "img": "static/images/JCHats/9.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-010",
-        "img": "images/JCHats/10.jpeg",
+        "img": "static/images/JCHats/10.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-011",
-        "img": "images/JCHats/11.jpeg",
+        "img": "static/images/JCHats/11.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-012",
-        "img": "images/JCHats/12.jpeg",
+        "img": "static/images/JCHats/12.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-013",
-        "img": "images/JCHats/13.jpeg",
+        "img": "static/images/JCHats/13.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-014",
-        "img": "images/JCHats/14.jpeg",
+        "img": "static/images/JCHats/14.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-015",
-        "img": "images/JCHats/15.jpeg",
+        "img": "static/images/JCHats/15.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-016",
-        "img": "images/JCHats/16.jpeg",
+        "img": "static/images/JCHats/16.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-017",
-        "img": "images/JCHats/17.jpeg",
+        "img": "static/images/JCHats/17.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-018",
-        "img": "images/JCHats/18.jpeg",
+        "img": "static/images/JCHats/18.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-019",
-        "img": "images/JCHats/19.jpeg",
+        "img": "static/images/JCHats/19.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-020",
-        "img": "images/JCHats/20.jpeg",
+        "img": "static/images/JCHats/20.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-021",
-        "img": "images/JCHats/21.jpeg",
+        "img": "static/images/JCHats/21.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-022",
-        "img": "images/JCHats/22.jpeg",
+        "img": "static/images/JCHats/22.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-023",
-        "img": "images/JCHats/23.jpeg",
+        "img": "static/images/JCHats/23.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-024",
-        "img": "images/JCHats/24.jpeg",
+        "img": "static/images/JCHats/24.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-025",
-        "img": "images/JCHats/25.jpeg",
+        "img": "static/images/JCHats/25.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-026",
-        "img": "images/JCHats/26.jpeg",
+        "img": "static/images/JCHats/26.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-027",
-        "img": "images/JCHats/27.jpeg",
+        "img": "static/images/JCHats/27.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-028",
-        "img": "images/JCHats/28.jpeg",
+        "img": "static/images/JCHats/28.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-029",
-        "img": "images/JCHats/29.jpeg",
+        "img": "static/images/JCHats/29.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-030",
-        "img": "images/JCHats/30.jpeg",
+        "img": "static/images/JCHats/30.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-031",
-        "img": "images/JCHats/31.jpeg",
+        "img": "static/images/JCHats/31.jpeg",
         "Precio": 1000
         },
         {"Cod": "JC-032",
-        "img": "images/JCHats/32.jpeg",
+        "img": "static/images/JCHats/32.jpeg",
         "Precio": 1000
         }
     ]
@@ -194,63 +194,63 @@
     {"Marca": "Caps Lab",
     "Productos":[
         {"Cod": "CL-001",
-        "img": "images/CapsLab/1.jpeg",
+        "img": "static/images/CapsLab/1.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-002",
-        "img": "images/CapsLab/2.jpeg",
+        "img": "static/images/CapsLab/2.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-003",
-        "img": "images/CapsLab/3.jpeg",
+        "img": "static/images/CapsLab/3.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-004",
-        "img": "images/CapsLab/4.jpeg",
+        "img": "static/images/CapsLab/4.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-005",
-        "img": "images/CapsLab/5.jpeg",
+        "img": "static/images/CapsLab/5.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-006",
-        "img": "images/CapsLab/6.jpeg",
+        "img": "static/images/CapsLab/6.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-007",
-        "img": "images/CapsLab/7.jpeg",
+        "img": "static/images/CapsLab/7.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-008",
-        "img": "images/CapsLab/8.jpeg",
+        "img": "static/images/CapsLab/8.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-009",
-        "img": "images/CapsLab/9.jpeg",
+        "img": "static/images/CapsLab/9.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-010",
-        "img": "images/CapsLab/10.jpeg",
+        "img": "static/images/CapsLab/10.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-011",
-        "img": "images/CapsLab/11.jpeg",
+        "img": "static/images/CapsLab/11.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-012",
-        "img": "images/CapsLab/12.jpeg",
+        "img": "static/images/CapsLab/12.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-013",
-        "img": "images/CapsLab/13.jpeg",
+        "img": "static/images/CapsLab/13.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-014",
-        "img": "images/CapsLab/14.jpeg",
+        "img": "static/images/CapsLab/14.jpeg",
         "Precio": 1000
         },
         {"Cod": "CL-015",
-        "img": "images/CapsLab/15.jpeg",
+        "img": "static/images/CapsLab/15.jpeg",
         "Precio": 1000
         }
     ]
