@@ -3,71 +3,71 @@
     "Productos":[
         {"Cod": "NEE-001",
         "img": "static/images/NewEraExclusive/1.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-002",
         "img": "static/images/NewEraExclusive/2.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-003",
         "img": "static/images/NewEraExclusive/3.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-004",
         "img": "static/images/NewEraExclusive/4.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-005",
         "img": "static/images/NewEraExclusive/5.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-006",
         "img": "static/images/NewEraExclusive/6.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-007",
         "img": "static/images/NewEraExclusive/7.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-008",
         "img": "static/images/NewEraExclusive/8.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-009",
         "img": "static/images/NewEraExclusive/9.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-010",
         "img": "static/images/NewEraExclusive/10.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-011",
         "img": "static/images/NewEraExclusive/11.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-012",
         "img": "static/images/NewEraExclusive/12.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-013",
         "img": "static/images/NewEraExclusive/13.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-014",
         "img": "static/images/NewEraExclusive/14.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-015",
         "img": "static/images/NewEraExclusive/15.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-016",
         "img": "static/images/NewEraExclusive/16.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         },
         {"Cod": "NEE-017",
         "img": "static/images/NewEraExclusive/17.jpeg",
-        "Precio": "Q.     360.00"
+        "Precio": "Q.     525.00"
         }
     ]
 
