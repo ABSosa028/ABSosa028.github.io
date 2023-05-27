@@ -256,5 +256,301 @@
     ]
 
 
+    },
+    {"Marca": "GoorinBros",
+    "Productos":[
+        {"Cod": "ALACRÁN",
+        "img": "static/images/GoorinBros/alacran.jpeg",
+        "Precio": "Q.     625.00"
+        },
+        {"Cod": "AMERICA",
+        "img": "static/images/GoorinBros/america.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "ANGEL",
+        "img": "static/images/GoorinBros/angel.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "BAD BOY",
+        "img": "static/images/GoorinBros/badboy.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "BAD BOY",
+        "img": "static/images/GoorinBros/badboy2.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "BANANAS",
+        "img": "static/images/GoorinBros/bananas.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "BANDIT",
+        "img": "static/images/GoorinBros/bandit.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "BANDIT",
+        "img": "static/images/GoorinBros/bandit2.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "BARRACUDA",
+        "img": "static/images/GoorinBros/barracuda.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "BIGFOOT",
+        "img": "static/images/GoorinBros/bigfoot.jpeg",
+        "Precio": "Q.     950.00"
+        },
+        {"Cod": "BIG MOUTH",
+        "img": "static/images/GoorinBros/bigmouth.jpeg",
+        "Precio": "Q.     950.00"
+        },
+        {"Cod": "BLACK SHEEP",
+        "img": "static/images/GoorinBros/black_sheep.jpeg",
+        "Precio": "Q.     620.00"
+        },
+        {"Cod": "BLACK SHEEP",
+        "img": "static/images/GoorinBros/blacksheep2.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "BLACK SHEEP",
+        "img": "static/images/GoorinBros/blacksheep3.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "BOSS",
+        "img": "static/images/GoorinBros/boss.jpeg",
+        "Precio": "Q.     550.00"
+        },
+        {"Cod": "BUFFALO",
+        "img": "static/images/GoorinBros/bufallo.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "BULL",
+        "img": "static/images/GoorinBros/bull.jpeg",
+        "Precio": "Q.     570.00"
+        },
+        {"Cod": "CASH",
+        "img": "static/images/GoorinBros/cash.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "CASH",
+        "img": "static/images/GoorinBros/cash2.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "CASH",
+        "img": "static/images/GoorinBros/cash3.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "CHUPA",
+        "img": "static/images/GoorinBros/chupa.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CLEVER  (NIÑO)",
+        "img": "static/images/GoorinBros/clever.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "CLOWN",
+        "img": "static/images/GoorinBros/clown.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "COCK",
+        "img": "static/images/GoorinBros/cock.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "CRABBY",
+        "img": "static/images/GoorinBros/craby.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "DEADLY",
+        "img": "static/images/GoorinBros/deadly.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "DEFENSE",
+        "img": "static/images/GoorinBros/defense.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "EXTREME",
+        "img": "static/images/GoorinBros/extreme.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "FAT ASS",
+        "img": "static/images/GoorinBros/fatass.jpeg",
+        "Precio": "Q.     900.00"
+        },
+        {"Cod": "FEARLESS",
+        "img": "static/images/GoorinBros/fearlees.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "FIGHTER",
+        "img": "static/images/GoorinBros/fighter.jpeg",
+        "Precio": "Q.     799.00"
+        },
+        {"Cod": "G.O.A.T.",
+        "img": "static/images/GoorinBros/goat.jpeg",
+        "Precio": "Q.     625.00"
+        },
+        {"Cod": "G.O.A.T.",
+        "img": "static/images/GoorinBros/goat2.jpeg",
+        "Precio": "Q.     650.00"
+        },
+        {"Cod": "G.O.A.T.",
+        "img": "static/images/GoorinBros/goat3.jpeg",
+        "Precio": "Q.     625.00"
+        },
+        {"Cod": "GORILLA",
+        "img": "static/images/GoorinBros/gorilla.jpeg",
+        "Precio": "Q.     575.00"
+        },
+        {"Cod": "HARD",
+        "img": "static/images/GoorinBros/hard.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "HERBIVORE",
+        "img": "static/images/GoorinBros/hervibore.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "HIGH",
+        "img": "static/images/GoorinBros/high.jpeg",
+        "Precio": "Q.     560.00"
+        },
+        {"Cod": "HOTSHOT",
+        "img": "static/images/GoorinBros/hotshot.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "HUNGRY",
+        "img": "static/images/GoorinBros/hungry.jpeg",
+        "Precio": "Q.     550.00"
+        },
+        {"Cod": "ICE COLD",
+        "img": "static/images/GoorinBros/ice_cold.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "JAGUAR",
+        "img": "static/images/GoorinBros/jaguar.jpeg",
+        "Precio": "Q.     650.00"
+        },
+        {"Cod": "KING",
+        "img": "static/images/GoorinBros/king.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "KING   (NIÑO)",
+        "img": "static/images/GoorinBros/king2.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "LADY",
+        "img": "static/images/GoorinBros/lady.jpeg",
+        "Precio": "Q.     645.00"
+        },
+        {"Cod": "LEGEND",
+        "img": "static/images/GoorinBros/legend.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "LEGENDARY",
+        "img": "static/images/GoorinBros/legendary.jpeg",
+        "Precio": "Q.     950.00"
+        },
+        {"Cod": "LONE WOLF",
+        "img": "static/images/GoorinBros/lone_wolf.jpeg",
+        "Precio": "Q.     645.00"
+        },
+        {"Cod": "LONE WOLF",
+        "img": "static/images/GoorinBros/lonewolf2.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "LONE WOLF",
+        "img": "static/images/GoorinBros/lonewolf3.jpeg",
+        "Precio": "Q.     590.00"
+        },
+        {"Cod": "LONE WOLF",
+        "img": "static/images/GoorinBros/lonewolf4.jpeg",
+        "Precio": "Q.     590.00"
+        },
+        {"Cod": "LOVE BIRD",
+        "img": "static/images/GoorinBros/lovebird.jpeg",
+        "Precio": "Q.     699.00"
+        },
+        {"Cod": "MONSTER   (NIÑO)",
+        "img": "static/images/GoorinBros/moster.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "ONE HUNDRED",
+        "img": "static/images/GoorinBros/onehundred.jpeg",
+        "Precio": "Q.     950.00"
+        },
+        {"Cod": "PANTHER",
+        "img": "static/images/GoorinBros/panter.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "PANTHER",
+        "img": "static/images/GoorinBros/panter2.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "PANTHER",
+        "img": "static/images/GoorinBros/panter3.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "QUEEN",
+        "img": "static/images/GoorinBros/queen.jpeg",
+        "Precio": "Q.     575.00"
+        },
+        {"Cod": "QUEEN",
+        "img": "static/images/GoorinBros/queen2.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "RACK",
+        "img": "static/images/GoorinBros/rack.jpeg",
+        "Precio": "Q.     575.00"
+        },
+        {"Cod": "SHARK",
+        "img": "static/images/GoorinBros/shark.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "SHARK",
+        "img": "static/images/GoorinBros/shark2.jpeg",
+        "Precio": "Q.     625.00"
+        },
+        {"Cod": "SHOCKER",
+        "img": "static/images/GoorinBros/shoker.jpeg",
+        "Precio": "Q.     900.00"
+        },
+        {"Cod": "SLEEPY",
+        "img": "static/images/GoorinBros/sleepy.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "STALLION",
+        "img": "static/images/GoorinBros/stallion.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "STALLION",
+        "img": "static/images/GoorinBros/stallion2.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "STAR",
+        "img": "static/images/GoorinBros/star.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "STUD",
+        "img": "static/images/GoorinBros/stud.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "TIGER",
+        "img": "static/images/GoorinBros/tiger.jpeg",
+        "Precio": "Q.     650.00"
+        },
+        {"Cod": "TIGER",
+        "img": "static/images/GoorinBros/tiger2.jpeg",
+        "Precio": "Q.     650.00"
+        },
+        {"Cod": "TIGER",
+        "img": "static/images/GoorinBros/tiger3.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "TIGER",
+        "img": "static/images/GoorinBros/tiger4.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "WHACK OFF",
+        "img": "static/images/GoorinBros/whackoff.jpeg",
+        "Precio": "Q.     500.00"
+        }
+    ]
     }
     ]
