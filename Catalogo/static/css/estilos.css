@@ -1,0 +1,85 @@
+.estilito{
+    border-radius: 0%;
+    background-color: black;
+    color: white;
+    width: 10%;
+    height: 10%;
+}
+.columna {
+    width:33%;
+    float:left;
+  }
+  
+  @media (max-width: 500px) {
+    
+    .columna {
+      width:auto;
+      float:none;
+    }
+    
+}
+.navbar{
+  font-family: 'Arial', monospace;
+}
+.navbar-toggler{
+  margin-right: 20px;
+}
+.navbar-nav{
+  margin-left: 25px;
+}
+.jeader{
+    background-color: black;
+    color: white;
+    width: 60%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    margin-inline: 22%;
+}
+
+.logo{
+    width: 10%;
+    height: 10%;
+    margin-left: 45%;
+    margin-right: 45%;
+    background-color: white;
+    align-items: center;
+    
+}
+
+.whatsapp {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+  
+  .whatsapp-icon {
+    margin-top:13px;
+  }
+
+  .facebook {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:110px;
+    right:40px;
+    background-color:#3b5998 ;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+  
+  .facebook-icon {
+    margin-top:15px;
+    margin-right: 2px;
+  }

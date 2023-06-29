@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gorras Quiché</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./static/css/estilos.css">
+    <link rel="icon" href="static/images/general/LGQ.png"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .modal{
+            text-align: center;
+            align-content: center;
+            width: 80%;
+        }
+        .tt{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(48, 104, 130);
+            font-size: 50px;
+            text-align: center;
+            margin-top: 20px;
+            text-shadow: 2px;
+        }
+        .card-img-top{
+            border-radius: 40px 4px 40px 4px;
+            margin-top: 12px;
+            
+        }
+        .card-body{
+            text-align: center;
+        }
+        .card{
+            margin-bottom: 20px;
+        }
+        .product-card {
+           margin-block-end: 10px;
+        }
+        .jumbotron {
+            width: 100%;
+            background-image: url('static/images/general/banne3r\ \(1\).jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            position: relative;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .description {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .description .half-image {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .description .half-image img {
+            width: 50%;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 120%;
+            max-width: 700px;
+        }
+        
+        .modal-img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .modal-info {
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .body{
+            background-color: #F0EAE9;
+        }
+    </style>
+</head>
+<body style="background-color: #FAFAFA;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse y" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="filterProducts('Ranch & Corral')">Ranch & Corral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="filterProducts('JC Hats')">JC Hats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="filterProducts('Caps Lab')">Caps Lab</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="filterProducts('GoorinBros')">GoorinBros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="filterProducts('New Era Exclusive')">New Era (Exclusive)</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      New Era
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#" onclick="filterCategor('5950')">New Era 5950</a>
+                      <a class="dropdown-item" href="#" onclick="filterCategor('9Fifty Snapback')">9FIFTY Snapback</a>
+                      <a class="dropdown-item" href="#" onclick="filterCategor('9Forty Maya Ajustable')">Forty Maya ajustable</a>
+                      <a class="dropdown-item" href="#" onclick="filterCategor('9Forty Tela Ajustable')">9FIFTY Tela ajustable</a>
+                      <a class="dropdown-item" href="#" onclick="filterCategor('39THIRTY curva cerrada')">39THIRTY curva cerrada</a>
+                      <a class="dropdown-item" href="#" onclick="filterCategor('9Forty Dama')">9FORTY Dama</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" onclick="filterProducts('New Era')">Todo New Era</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="filterProducts('FÓRMULA 1')">F1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="filterProducts('ALL IN BRAND KING MAYA')">KING MAYA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="resetFilter()">Mostrar Todos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!-- Modal -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="caption" class="modal-info"></div>
+</div>
+    <div class="jumbotron"></div>
+    <div class="mi-imagen" src=""></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="description">
+                    <div class="half-image">
+                        <img src="static/images/general/LGQ.png" alt="Main Image">
+                    </div>
+                    <h2>Gorras Quiché</h2>
+                    <p>Somos una empresa importadora de gorras originales de la diferentes marcas reconocidas a nivel mundial.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <br>
+    <div id="prdS" class="tt"></div>
+    <br>
+    <div class="container">
+        <div class="row" id="product-container"></div>
+    </div>
+
+    <script>
+        var data =[
+    {"Marca":"New Era Exclusive",
+    "Productos":[
+        {"Cod": "NEE-001",
+        "img": "static/images/NewEraExclusive/1.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-002",
+        "img": "static/images/NewEraExclusive/2.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-003",
+        "img": "static/images/NewEraExclusive/3.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-004",
+        "img": "static/images/NewEraExclusive/4.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-005",
+        "img": "static/images/NewEraExclusive/5.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-006",
+        "img": "static/images/NewEraExclusive/6.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-007",
+        "img": "static/images/NewEraExclusive/7.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-008",
+        "img": "static/images/NewEraExclusive/8.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-009",
+        "img": "static/images/NewEraExclusive/9.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-010",
+        "img": "static/images/NewEraExclusive/10.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-011",
+        "img": "static/images/NewEraExclusive/11.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-012",
+        "img": "static/images/NewEraExclusive/12.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-013",
+        "img": "static/images/NewEraExclusive/13.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-014",
+        "img": "static/images/NewEraExclusive/14.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-015",
+        "img": "static/images/NewEraExclusive/15.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-016",
+        "img": "static/images/NewEraExclusive/16.jpeg",
+        "Precio": "Q.     525.00"
+        },
+        {"Cod": "NEE-017",
+        "img": "static/images/NewEraExclusive/17.jpeg",
+        "Precio": "Q.     525.00"
+        }
+    ]
+
+    },{"Marca": "New Era",
+    "Productos":[
+        {"Cod": "NE-001",
+        "img": "static/images/NewEra/5950/1.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "5950",
+        "tallas": ["7 1/4","7 3/8"]
+        },
+        {"Cod": "NE-002",
+        "img": "static/images/NewEra/5950/2.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "5950",
+        "tallas": ["7 1/8","7 1/4","7 3/8"]
+        },
+        {"Cod": "NE-003",
+        "img": "static/images/NewEra/5950/3.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "5950",
+        "tallas": ["7 1/4"]
+        },
+        {"Cod": "NE-004",
+        "img": "static/images/NewEra/5950/4.jpeg",
+        "Precio": "Q.     400.00",
+        "silueta": "5950",
+        "tallas": ["7 1/8","7 1/4"]
+        },
+        {"Cod": "NE-005",
+        "img": "static/images/NewEra/5950/5.jpeg",
+        "Precio": "Q.     400.00",
+        "silueta": "5950",
+        "tallas": ["7 1/2"]
+        },
+        {"Cod": "NE-006",
+        "img": "static/images/NewEra/5950/6.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/4"]
+        },
+        {"Cod": "NE-007",
+        "img": "static/images/NewEra/5950/7.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7 1/8","7 1/4", "7 3/8"]
+        },
+        {"Cod": "NE-008",
+        "img": "static/images/NewEra/5950/8.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7 1/4"]
+        },
+        {"Cod": "NE-009",
+        "img": "static/images/NewEra/5950/9.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7 1/4", "7 3/8"]
+        },
+        {"Cod": "NE-010",
+        "img": "static/images/NewEra/5950/10.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7 1/2"]
+        },
+        {"Cod": "NE-011",
+        "img": "static/images/NewEra/5950/11.jpeg",
+        "Precio": "Q.     380.00",
+        "silueta": "5950",
+        "tallas": ["7 1/4"]
+        },
+        {"Cod": "P",
+        "img": "static/images/NewEra/5950/p.jpeg",
+        "Precio": "Q.     410.00",
+        "silueta": "5950",
+        "tallas": ["7"]
+        },
+        {"Cod": "LA",
+        "img": "static/images/NewEra/5950/la.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/4"]
+        },
+        {"Cod": "Yankees",
+        "img": "static/images/NewEra/5950/yk.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8","7 1/4","7 3/8"]
+        },
+        {"Cod": "Yankees",
+        "img": "static/images/NewEra/5950/yk2.jpeg",
+        "Precio": "Q.     410.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/4"]
+        },
+        {"Cod": "Yankees",
+        "img": "static/images/NewEra/5950/yk3.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8","7 1/4","7 3/8"]
+        },
+        {"Cod": "Yankees",
+        "img": "static/images/NewEra/5950/yk4.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8", "7 1/4", "7 3/8"]
+        },
+        {"Cod": "Dogers",
+        "img": "static/images/NewEra/5950/dg.jpeg",
+        "Precio": "Q.     410.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/4", "7 3/8"]
+        },
+        {"Cod": "SoX",
+        "img": "static/images/NewEra/5950/SoX.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8", "7 1/4", "7 3/8"]
+        },
+        {"Cod": "LA",
+        "img": "static/images/NewEra/5950/la2.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8", "7 1/4", "7 3/8"]
+        },
+        {"Cod": "Bulls",
+        "img": "static/images/NewEra/5950/bulls.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8", "7 1/4", "7 3/8"]
+        },
+        {"Cod": "Yankees Neón",
+        "img": "static/images/NewEra/5950/ykneon.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8", "7 1/4", "7 3/8"]
+        },
+        {"Cod": "Broncos",
+        "img": "static/images/NewEra/5950/broncos.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7"]
+        },
+        {"Cod": "LA",
+        "img": "static/images/NewEra/5950/la3.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8", "7 1/4", "7 3/8"]
+        },
+        {"Cod": "Yankees",
+        "img": "static/images/NewEra/5950/yk5.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8","7 1/4", "7 3/8"]
+        },
+        {"Cod": "MLB",
+        "img": "static/images/NewEra/5950/mlb.jpeg",
+        "Precio": "Q.     370.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8"]
+        },
+        {"Cod": "Mets Draft",
+        "img": "static/images/NewEra/5950/nd.jpeg",
+        "Precio": "Q.     380.00",
+        "silueta": "5950",
+        "tallas": ["7"]
+        },
+        {"Cod": "Draft",
+        "img": "static/images/NewEra/5950/draft.jpeg",
+        "Precio": "Q.     380.00",
+        "silueta": "5950",
+        "tallas": ["7"]
+        },
+        {"Cod": "Boston",
+        "img": "static/images/NewEra/5950/boston.jpeg",
+        "Precio": "Q.     370.00",
+        "silueta": "5950",
+        "tallas": ["7","7 1/8"]
+        },
+        {"Cod": "Yankees",
+        "img": "static/images/NewEra/5950/yk6.jpeg",
+        "Precio": "Q.     370.00",
+        "silueta": "5950",
+        "tallas": ["7"]
+        },
+        {"Cod": "Warriors",
+        "img": "static/images/NewEra/5950/warr.jpeg",
+        "Precio": "Q.     430.00",
+        "silueta": "5950",
+        "tallas": ["7"]
+        },
+        {"Cod": "9FSnap-001",
+        "img": "static/images/NewEra/9Fifty/1.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-002",
+        "img": "static/images/NewEra/9Fifty/2.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-003",
+        "img": "static/images/NewEra/9Fifty/3.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-004",
+        "img": "static/images/NewEra/9Fifty/4.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-005",
+        "img": "static/images/NewEra/9Fifty/5.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-006",
+        "img": "static/images/NewEra/9Fifty/6.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-007",
+        "img": "static/images/NewEra/9Fifty/7.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-008",
+        "img": "static/images/NewEra/9Fifty/8.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-009",
+        "img": "static/images/NewEra/9Fifty/9.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-010",
+        "img": "static/images/NewEra/9Fifty/10.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-011",
+        "img": "static/images/NewEra/9Fifty/11.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-012",
+        "img": "static/images/NewEra/9Fifty/12.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-013",
+        "img": "static/images/NewEra/9Fifty/13.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-014",
+        "img": "static/images/NewEra/9Fifty/14.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-015",
+        "img": "static/images/NewEra/9Fifty/15.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-016",
+        "img": "static/images/NewEra/9Fifty/16.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-017",
+        "img": "static/images/NewEra/9Fifty/17.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-018",
+        "img": "static/images/NewEra/9Fifty/18.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-019",
+        "img": "static/images/NewEra/9Fifty/19.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-020",
+        "img": "static/images/NewEra/9Fifty/20.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-021",
+        "img": "static/images/NewEra/9Fifty/21.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-022",
+        "img": "static/images/NewEra/9Fifty/22.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-023",
+        "img": "static/images/NewEra/9Fifty/23.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-024",
+        "img": "static/images/NewEra/9Fifty/24.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-025",
+        "img": "static/images/NewEra/9Fifty/25.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-026",
+        "img": "static/images/NewEra/9Fifty/26.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-027",
+        "img": "static/images/NewEra/9Fifty/27.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-028",
+        "img": "static/images/NewEra/9Fifty/28.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-029",
+        "img": "static/images/NewEra/9Fifty/29.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-030",
+        "img": "static/images/NewEra/9Fifty/30.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-031",
+        "img": "static/images/NewEra/9Fifty/31.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-032",
+        "img": "static/images/NewEra/9Fifty/32.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-033",
+        "img": "static/images/NewEra/9Fifty/33.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-034",
+        "img": "static/images/NewEra/9Fifty/34.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-035",
+        "img": "static/images/NewEra/9Fifty/35.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-036",
+        "img": "static/images/NewEra/9Fifty/36.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-037",
+        "img": "static/images/NewEra/9Fifty/37.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-038",
+        "img": "static/images/NewEra/9Fifty/38.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-039",
+        "img": "static/images/NewEra/9Fifty/39.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-040",
+        "img": "static/images/NewEra/9Fifty/40.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },
+        {"Cod": "9FSnap-041",
+        "img": "static/images/NewEra/9Fifty/41.jpeg",
+        "Precio": "Q.     390.00",
+        "silueta": "9Fifty Snapback"
+        },{"Cod":"9FDama-01",
+        "img": "static/images/NewEra/9FortyDama/1.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Dama"
+        },{"Cod":"9FDama-02",
+        "img": "static/images/NewEra/9FortyDama/2.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Dama"
+        },{"Cod":"9FDama-03",
+        "img": "static/images/NewEra/9FortyDama/3.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Dama"
+        },{"Cod":"9FDama-04",
+        "img": "static/images/NewEra/9FortyDama/4.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Dama"
+        },{"Cod":"9FDama-05",
+        "img": "static/images/NewEra/9FortyDama/5.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Dama"
+        },{"Cod":"9FDama-06",
+        "img": "static/images/NewEra/9FortyDama/6.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Dama"
+        },{"Cod":"9FDama-07",
+        "img": "static/images/NewEra/9FortyDama/7.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Dama"
+        },{"Cod":"9FMaya-01",
+        "img": "static/images/NewEra/9FortyMaya/1.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-02",
+        "img": "static/images/NewEra/9FortyMaya/2.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-03",
+        "img": "static/images/NewEra/9FortyMaya/3.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-04",
+        "img": "static/images/NewEra/9FortyMaya/4.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-05",
+        "img": "static/images/NewEra/9FortyMaya/5.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-06",
+        "img": "static/images/NewEra/9FortyMaya/6.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-07",
+        "img": "static/images/NewEra/9FortyMaya/7.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-08",
+        "img": "static/images/NewEra/9FortyMaya/8.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-09",
+        "img": "static/images/NewEra/9FortyMaya/9.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FMaya-10",
+        "img": "static/images/NewEra/9FortyMaya/10.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Maya Ajustable"
+        },{"Cod":"9FTela-01",
+        "img": "static/images/NewEra/9FortyTela/1.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-02",
+        "img": "static/images/NewEra/9FortyTela/2.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-03",
+        "img": "static/images/NewEra/9FortyTela/3.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-04",
+        "img": "static/images/NewEra/9FortyTela/4.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-05",
+        "img": "static/images/NewEra/9FortyTela/5.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-06",
+        "img": "static/images/NewEra/9FortyTela/6.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-07",
+        "img": "static/images/NewEra/9FortyTela/7.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-08",
+        "img": "static/images/NewEra/9FortyTela/8.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-09",
+        "img": "static/images/NewEra/9FortyTela/9.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-10",
+        "img": "static/images/NewEra/9FortyTela/10.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-11",
+        "img": "static/images/NewEra/9FortyTela/11.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-12",
+        "img": "static/images/NewEra/9FortyTela/12.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-13",
+        "img": "static/images/NewEra/9FortyTela/13.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-14",
+        "img": "static/images/NewEra/9FortyTela/14.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-15",
+        "img": "static/images/NewEra/9FortyTela/15.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-16",
+        "img": "static/images/NewEra/9FortyTela/16.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-17",
+        "img": "static/images/NewEra/9FortyTela/17.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-18",
+        "img": "static/images/NewEra/9FortyTela/18.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-19",
+        "img": "static/images/NewEra/9FortyTela/19.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-20",
+        "img": "static/images/NewEra/9FortyTela/20.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-21",
+        "img": "static/images/NewEra/9FortyTela/21.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-22",
+        "img": "static/images/NewEra/9FortyTela/22.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-23",
+        "img": "static/images/NewEra/9FortyTela/23.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-24",
+        "img": "static/images/NewEra/9FortyTela/24.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-25",
+        "img": "static/images/NewEra/9FortyTela/25.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-26",
+        "img": "static/images/NewEra/9FortyTela/26.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"9FTela-27",
+        "img": "static/images/NewEra/9FortyTela/27.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "9Forty Tela Ajustable"
+        },{"Cod":"39THIRTY-01",
+        "img": "static/images/NewEra/39TH/1.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-02",
+        "img": "static/images/NewEra/39TH/2.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-03",
+        "img": "static/images/NewEra/39TH/3.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-04",
+        "img": "static/images/NewEra/39TH/4.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-05",
+        "img": "static/images/NewEra/39TH/5.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-06",
+        "img": "static/images/NewEra/39TH/6.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-07",
+        "img": "static/images/NewEra/39TH/7.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-08",
+        "img": "static/images/NewEra/39TH/8.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-09",
+        "img": "static/images/NewEra/39TH/9.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-10",
+        "img": "static/images/NewEra/39TH/10.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-11",
+        "img": "static/images/NewEra/39TH/11.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-12",
+        "img": "static/images/NewEra/39TH/12.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-13",
+        "img": "static/images/NewEra/39TH/13.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-14",
+        "img": "static/images/NewEra/39TH/14.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-15",
+        "img": "static/images/NewEra/39TH/15.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-16",
+        "img": "static/images/NewEra/39TH/16.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-17",
+        "img": "static/images/NewEra/39TH/17.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        },{"Cod":"39THIRTY-18",
+        "img": "static/images/NewEra/39TH/18.jpeg",
+        "Precio": "Q.     300.00",
+        "silueta": "39THIRTY curva cerrada"
+        }
+    ]
+    },
+    {"Marca": "Ranch & Corral",
+    "Productos": [
+        {"Cod": "RC-001",
+        "img": "static/images/Ranch&Corral/1.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-002",
+        "img": "static/images/Ranch&Corral/2.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-003",
+        "img": "static/images/Ranch&Corral/3.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-004",
+        "img": "static/images/Ranch&Corral/4.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-005",
+        "img": "static/images/Ranch&Corral/5.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-006",
+        "img": "static/images/Ranch&Corral/6.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-007",
+        "img": "static/images/Ranch&Corral/7.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-008",
+        "img": "static/images/Ranch&Corral/8.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-009",
+        "img": "static/images/Ranch&Corral/9.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-010",
+        "img": "static/images/Ranch&Corral/10.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-011",
+        "img": "static/images/Ranch&Corral/11.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-012",
+        "img": "static/images/Ranch&Corral/12.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-013",
+        "img": "static/images/Ranch&Corral/13.jpeg",
+        "Precio": "Q.     360.00"
+        },
+        {"Cod": "RC-014",
+        "img": "static/images/Ranch&Corral/14.jpeg",
+        "Precio": "Q.     360.00"
+        }
+        ]
+    },
+    {"Marca": "JC Hats",
+    "Productos":[
+        {"Cod": "JC-001",
+        "img": "static/images/JCHats/1.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "JC-002",
+        "img": "static/images/JCHats/2.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "JC-003",
+        "img": "static/images/JCHats/3.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "JC-004",
+        "img": "static/images/JCHats/4.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-005",
+        "img": "static/images/JCHats/5.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-006",
+        "img": "static/images/JCHats/6.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-007",
+        "img": "static/images/JCHats/7.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-008",
+        "img": "static/images/JCHats/8.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-009",
+        "img": "static/images/JCHats/9.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-010",
+        "img": "static/images/JCHats/10.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-011",
+        "img": "static/images/JCHats/11.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-012",
+        "img": "static/images/JCHats/12.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-013",
+        "img": "static/images/JCHats/13.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-014",
+        "img": "static/images/JCHats/14.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-015",
+        "img": "static/images/JCHats/15.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-016",
+        "img": "static/images/JCHats/16.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-017",
+        "img": "static/images/JCHats/17.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-018",
+        "img": "static/images/JCHats/18.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-019",
+        "img": "static/images/JCHats/19.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-020",
+        "img": "static/images/JCHats/20.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-021",
+        "img": "static/images/JCHats/21.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "JC-022",
+        "img": "static/images/JCHats/22.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-023",
+        "img": "static/images/JCHats/23.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-024",
+        "img": "static/images/JCHats/24.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-025",
+        "img": "static/images/JCHats/25.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-026",
+        "img": "static/images/JCHats/26.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-027",
+        "img": "static/images/JCHats/27.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-028",
+        "img": "static/images/JCHats/28.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-029",
+        "img": "static/images/JCHats/29.jpeg",
+        "Precio": "Q.     480.00"
+        },
+        {"Cod": "JC-030",
+        "img": "static/images/JCHats/30.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "JC-031",
+        "img": "static/images/JCHats/31.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "JC-032",
+        "img": "static/images/JCHats/32.jpeg",
+        "Precio": "Q.     599.00"
+        }
+    ]
+    },
+    {"Marca": "Caps Lab",
+    "Productos":[
+        {"Cod": "CL-001",
+        "img": "static/images/CapsLab/1.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-002",
+        "img": "static/images/CapsLab/2.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-003",
+        "img": "static/images/CapsLab/3.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-004",
+        "img": "static/images/CapsLab/4.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-005",
+        "img": "static/images/CapsLab/5.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-006",
+        "img": "static/images/CapsLab/6.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-007",
+        "img": "static/images/CapsLab/7.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-008",
+        "img": "static/images/CapsLab/8.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-009",
+        "img": "static/images/CapsLab/9.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-010",
+        "img": "static/images/CapsLab/10.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-011",
+        "img": "static/images/CapsLab/11.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-012",
+        "img": "static/images/CapsLab/12.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-013",
+        "img": "static/images/CapsLab/13.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-014",
+        "img": "static/images/CapsLab/14.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CL-015",
+        "img": "static/images/CapsLab/15.jpeg",
+        "Precio": "Q.     500.00"
+        }
+    ]
+
+
+    },
+    {"Marca": "GoorinBros",
+    "Productos":[
+        {"Cod": "ALACRÁN",
+        "img": "static/images/GoorinBros/alacran.jpeg",
+        "Precio": "Q.     625.00"
+        },
+        {"Cod": "AMERICA",
+        "img": "static/images/GoorinBros/america.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "ANGEL",
+        "img": "static/images/GoorinBros/angel.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "BAD BOY",
+        "img": "static/images/GoorinBros/badboy.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "BAD BOY",
+        "img": "static/images/GoorinBros/badboy2.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "BANANAS",
+        "img": "static/images/GoorinBros/bananas.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "BANDIT",
+        "img": "static/images/GoorinBros/bandit.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "BANDIT",
+        "img": "static/images/GoorinBros/bandit2.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "BARRACUDA",
+        "img": "static/images/GoorinBros/barracuda.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "BIGFOOT",
+        "img": "static/images/GoorinBros/bigfoot.jpeg",
+        "Precio": "Q.     950.00"
+        },
+        {"Cod": "BIG MOUTH",
+        "img": "static/images/GoorinBros/bigmouth.jpeg",
+        "Precio": "Q.     950.00"
+        },
+        {"Cod": "BLACK SHEEP",
+        "img": "static/images/GoorinBros/black_sheep.jpeg",
+        "Precio": "Q.     620.00"
+        },
+        {"Cod": "BLACK SHEEP",
+        "img": "static/images/GoorinBros/blacksheep2.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "BLACK SHEEP",
+        "img": "static/images/GoorinBros/blacksheep3.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "BOSS",
+        "img": "static/images/GoorinBros/boss.jpeg",
+        "Precio": "Q.     550.00"
+        },
+        {"Cod": "BUFFALO",
+        "img": "static/images/GoorinBros/bufallo.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "BULL",
+        "img": "static/images/GoorinBros/bull.jpeg",
+        "Precio": "Q.     570.00"
+        },
+        {"Cod": "CASH",
+        "img": "static/images/GoorinBros/cash.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "CASH",
+        "img": "static/images/GoorinBros/cash2.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "CASH",
+        "img": "static/images/GoorinBros/cash3.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "CHUPA",
+        "img": "static/images/GoorinBros/chupa.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "CLEVER  (NIÑO)",
+        "img": "static/images/GoorinBros/clever.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "CLOWN",
+        "img": "static/images/GoorinBros/clown.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "COCK",
+        "img": "static/images/GoorinBros/cock.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "CRABBY",
+        "img": "static/images/GoorinBros/craby.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "DEADLY",
+        "img": "static/images/GoorinBros/deadly.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "DEFENSE",
+        "img": "static/images/GoorinBros/defense.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "EXTREME",
+        "img": "static/images/GoorinBros/extreme.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "FAT ASS",
+        "img": "static/images/GoorinBros/fatass.jpeg",
+        "Precio": "Q.     900.00"
+        },
+        {"Cod": "FEARLESS",
+        "img": "static/images/GoorinBros/fearlees.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "FIGHTER",
+        "img": "static/images/GoorinBros/fighter.jpeg",
+        "Precio": "Q.     799.00"
+        },
+        {"Cod": "G.O.A.T.",
+        "img": "static/images/GoorinBros/goat.jpeg",
+        "Precio": "Q.     625.00"
+        },
+        {"Cod": "G.O.A.T.",
+        "img": "static/images/GoorinBros/goat2.jpeg",
+        "Precio": "Q.     650.00"
+        },
+        {"Cod": "G.O.A.T.",
+        "img": "static/images/GoorinBros/goat3.jpeg",
+        "Precio": "Q.     625.00"
+        },
+        {"Cod": "GORILLA",
+        "img": "static/images/GoorinBros/gorilla.jpeg",
+        "Precio": "Q.     575.00"
+        },
+        {"Cod": "HARD",
+        "img": "static/images/GoorinBros/hard.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "HERBIVORE",
+        "img": "static/images/GoorinBros/hervibore.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "HIGH",
+        "img": "static/images/GoorinBros/high.jpeg",
+        "Precio": "Q.     560.00"
+        },
+        {"Cod": "HOTSHOT",
+        "img": "static/images/GoorinBros/hotshot.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "HUNGRY",
+        "img": "static/images/GoorinBros/hungry.jpeg",
+        "Precio": "Q.     550.00"
+        },
+        {"Cod": "ICE COLD",
+        "img": "static/images/GoorinBros/ice_cold.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "JAGUAR",
+        "img": "static/images/GoorinBros/jaguar.jpeg",
+        "Precio": "Q.     650.00"
+        },
+        {"Cod": "KING",
+        "img": "static/images/GoorinBros/king.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "KING   (NIÑO)",
+        "img": "static/images/GoorinBros/king2.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "LADY",
+        "img": "static/images/GoorinBros/lady.jpeg",
+        "Precio": "Q.     645.00"
+        },
+        {"Cod": "LEGEND",
+        "img": "static/images/GoorinBros/legend.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "LEGENDARY",
+        "img": "static/images/GoorinBros/legendary.jpeg",
+        "Precio": "Q.     950.00"
+        },
+        {"Cod": "LONE WOLF",
+        "img": "static/images/GoorinBros/lone_wolf.jpeg",
+        "Precio": "Q.     645.00"
+        },
+        {"Cod": "LONE WOLF",
+        "img": "static/images/GoorinBros/lonewolf2.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "LONE WOLF",
+        "img": "static/images/GoorinBros/lonewolf3.jpeg",
+        "Precio": "Q.     590.00"
+        },
+        {"Cod": "LONE WOLF",
+        "img": "static/images/GoorinBros/lonewolf4.jpeg",
+        "Precio": "Q.     590.00"
+        },
+        {"Cod": "LOVE BIRD",
+        "img": "static/images/GoorinBros/lovebird.jpeg",
+        "Precio": "Q.     699.00"
+        },
+        {"Cod": "MONSTER   (NIÑO)",
+        "img": "static/images/GoorinBros/moster.jpeg",
+        "Precio": "Q.     499.00"
+        },
+        {"Cod": "ONE HUNDRED",
+        "img": "static/images/GoorinBros/onehundred.jpeg",
+        "Precio": "Q.     950.00"
+        },
+        {"Cod": "PANTHER",
+        "img": "static/images/GoorinBros/panter.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "PANTHER",
+        "img": "static/images/GoorinBros/panter2.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "PANTHER",
+        "img": "static/images/GoorinBros/panter3.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "QUEEN",
+        "img": "static/images/GoorinBros/queen.jpeg",
+        "Precio": "Q.     575.00"
+        },
+        {"Cod": "QUEEN",
+        "img": "static/images/GoorinBros/queen2.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "RACK",
+        "img": "static/images/GoorinBros/rack.jpeg",
+        "Precio": "Q.     575.00"
+        },
+        {"Cod": "SHARK",
+        "img": "static/images/GoorinBros/shark.jpeg",
+        "Precio": "Q.     599.00"
+        },
+        {"Cod": "SHARK",
+        "img": "static/images/GoorinBros/shark2.jpeg",
+        "Precio": "Q.     625.00"
+        },
+        {"Cod": "SHOCKER",
+        "img": "static/images/GoorinBros/shoker.jpeg",
+        "Precio": "Q.     900.00"
+        },
+        {"Cod": "SLEEPY",
+        "img": "static/images/GoorinBros/sleepy.jpeg",
+        "Precio": "Q.     850.00"
+        },
+        {"Cod": "STALLION",
+        "img": "static/images/GoorinBros/stallion.jpeg",
+        "Precio": "Q.     600.00"
+        },
+        {"Cod": "STALLION",
+        "img": "static/images/GoorinBros/stallion2.jpeg",
+        "Precio": "Q.     750.00"
+        },
+        {"Cod": "STAR",
+        "img": "static/images/GoorinBros/star.jpeg",
+        "Precio": "Q.     800.00"
+        },
+        {"Cod": "STUD",
+        "img": "static/images/GoorinBros/stud.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "TIGER",
+        "img": "static/images/GoorinBros/tiger.jpeg",
+        "Precio": "Q.     650.00"
+        },
+        {"Cod": "TIGER",
+        "img": "static/images/GoorinBros/tiger2.jpeg",
+        "Precio": "Q.     650.00"
+        },
+        {"Cod": "TIGER",
+        "img": "static/images/GoorinBros/tiger3.jpeg",
+        "Precio": "Q.     580.00"
+        },
+        {"Cod": "TIGER",
+        "img": "static/images/GoorinBros/tiger4.jpeg",
+        "Precio": "Q.     500.00"
+        },
+        {"Cod": "WHACK OFF",
+        "img": "static/images/GoorinBros/whackoff.jpeg",
+        "Precio": "Q.     500.00"
+        }
+    ]
+    },{"Marca": "FÓRMULA 1",
+    "Productos":[
+        {"Cod": "F1-01",
+        "img": "static/images/F1/1.jpeg",
+        "Precio": "Q.     400.00"
+        },{"Cod": "F1-02",
+        "img": "static/images/F1/2.jpeg",
+        "Precio": "Q.     380.00"
+        },{"Cod": "F1-03",
+        "img": "static/images/F1/3.jpeg",
+        "Precio": "Q.     380.00"
+        },{"Cod": "F1-04",
+        "img": "static/images/F1/4.jpeg",
+        "Precio": "Q.     380.00"
+        },{"Cod": "F1-05",
+        "img": "static/images/F1/5.jpeg",
+        "Precio": "Q.     460.00"
+        },{"Cod": "F1-06",
+        "img": "static/images/F1/6.jpeg",
+        "Precio": "Q.     380.00"
+        },{"Cod": "F1-07",
+        "img": "static/images/F1/7.jpeg",
+        "Precio": "Q.     460.00"
+        },{"Cod": "F1-08",
+        "img": "static/images/F1/8.jpeg",
+        "Precio": "Q.     380.00"
+        },{"Cod": "F1-09",
+        "img": "static/images/F1/9.jpeg",
+        "Precio": "Q.     400.00"
+        },{"Cod": "F1-10",
+        "img": "static/images/F1/10.jpeg",
+        "Precio": "Q.     380.00"
+        },{"Cod": "F1-11",
+        "img": "static/images/F1/11.jpeg",
+        "Precio": "Q.     400.00"
+        }
+    ]
+    },{"Marca": "ALL IN BRAND KING MAYA",
+    "Productos":[
+        {"Cod": "KGMAYA-01",
+        "img": "static/images/MAYA/1.jpeg",
+        "Precio": "Q.     450.00"
+        },{"Cod": "KGMAYA-02",
+        "img": "static/images/MAYA/2.jpeg",
+        "Precio": "Q.     450.00"
+        },{"Cod": "KGMAYA-03",
+        "img": "static/images/MAYA/3.jpeg",
+        "Precio": "Q.     450.00"
+        },{"Cod": "KGMAYA-04",
+        "img": "static/images/MAYA/4.jpeg",
+        "Precio": "Q.     450.00"
+        },{"Cod": "KGMAYA-05",
+        "img": "static/images/MAYA/5.jpeg",
+        "Precio": "Q.     450.00"
+        },{"Cod": "KGMAYA-06",
+        "img": "static/images/MAYA/6.jpeg",
+        "Precio": "Q.     450.00"
+        }
+    ]
+    }
+    ];
+    
+        function createProductCard(marca, producto) {
+            var card = document.createElement('div');
+            card.className = 'card col-md-4';
+
+            var img = document.createElement('img');
+            img.className = 'card-img-top';
+            img.src = producto.img;
+            img.alt = producto.Cod;
+            card.appendChild(img);
+
+            var cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            var title = document.createElement('h5');
+            title.className = 'card-title';
+            title.textContent = marca;
+            cardBody.appendChild(title);
+
+            var subtitle = document.createElement('h6');
+            subtitle.className = 'card-subtitle mb-2 text-muted';
+            subtitle.textContent = producto.Cod;
+            cardBody.appendChild(subtitle);
+
+            var price = document.createElement('p');
+            price.className = 'card-text';
+            price.textContent = 'Precio: ' + producto.Precio;
+            cardBody.appendChild(price);
+
+            if (producto.silueta != undefined){
+                var silueta = document.createElement('p');
+                silueta.className = 'card-text';
+                silueta.textContent = 'Silueta: ' + producto.silueta;
+                cardBody.appendChild(silueta);
+            }
+            if (producto.tallas != undefined){
+                var tallas = document.createElement('div');
+                tallas.className = 'btn-group me-2';
+                tallas.setAttribute('role', 'group');
+                tallas.setAttribute('aria-label', 'First group');
+                for (var i = 0; i < producto.tallas.length; i++) {
+                    var talla = document.createElement('button');
+                    talla.type = 'button';
+                    talla.className = 'btn btn-outline-secondary';
+                    talla.textContent = producto.tallas[i];
+                    tallas.appendChild(talla);
+                }
+                var titulotallas = document.createElement('p');
+                titulotallas.className = 'card-text';
+                titulotallas.textContent = 'Tallas: ';
+                cardBody.appendChild(titulotallas);
+                titulotallas.appendChild(tallas);
+                //add action listener to preview whit zoom image
+                
+                var espacio = document.createElement('p');
+                espacio.className = 'card-text';
+                espacio.textContent = ' ';
+                cardBody.appendChild(espacio);
+                
+            }
+
+            var button = document.createElement('button');
+            button.className = 'btn btn-primary';
+            button.textContent = 'Ordenar  ';
+            var i = document.createElement('i');
+            i.className = 'fa fa-whatsapp';
+            i.style = 'color: white;'
+            button.appendChild(i)
+            button.addEventListener('click', function () {
+                shareProduct(producto.Cod);
+            });
+            cardBody.appendChild(button);
+            card.addEventListener('click', function () {
+                    ver(producto);
+                });
+            card.appendChild(cardBody);
+
+            return card;
+        }
+
+        function shareProduct(imageUrl) {
+            var whatsappUrl = 'https://api.whatsapp.com/send?phone=+50233873562&text=¡Hola!%20Me%20Gustaría%20pedir%20este%20producto%20' + imageUrl + '%20';
+            window.open(whatsappUrl);
+        }
+
+        function renderProducts(products) {
+            var container = document.getElementById('product-container');
+            container.innerHTML = '';
+
+            products.forEach(function (product) {
+                var card = createProductCard(product.marca, product.producto);
+                container.appendChild(card);
+            });
+        }
+
+        function filterProducts(marca) {
+            var titulo = document.getElementById('prdS');
+            //poner marca seleccionada
+            titulo.textContent = marca;
+            var filteredProducts = [];
+
+            data.forEach(function (brand) {
+                if (brand.Marca === marca) {
+                    brand.Productos.forEach(function (producto) {
+                        filteredProducts.push({
+                            marca: brand.Marca,
+                            producto: producto
+                        });
+                    });
+                }
+            });
+
+            renderProducts(filteredProducts);
+        }
+
+        function filterCategor(cat){
+            var titulo = document.getElementById('prdS');
+            //poner marca seleccionada
+            titulo.textContent = cat;
+            var filteredProducts = [];
+
+            data.forEach(function (brand) {
+                brand.Productos.forEach(function (producto) {
+                    if (producto.silueta === cat) {
+                        filteredProducts.push({
+                            marca: brand.Marca,
+                            producto: producto
+                        });
+                    }
+                });
+            });
+
+            renderProducts(filteredProducts);
+        }
+
+        function resetFilter() {
+
+            var allProducts = [];
+            var titulo = document.getElementById('prdS');
+            //poner marca seleccionada
+            titulo.textContent = 'Todos los Productos';
+            data.forEach(function (brand) {
+                brand.Productos.forEach(function (producto) {
+                    allProducts.push({
+                        marca: brand.Marca,
+                        producto: producto
+                    });
+                });
+            });
+
+            renderProducts(allProducts);
+        }
+
+        function ver(product){
+            var modal = document.getElementById('modal');
+            modal.innerHTML = '';
+            var modalDialog = document.createElement('div');
+            modalDialog.className = 'modal-dialog modal-lg';
+            var modalContent = document.createElement('div');
+            modalContent.className = 'modal-content';
+            var modalHeader = document.createElement('div');
+            modalHeader.className = 'modal-header';
+            var modalTitle = document.createElement('h5');
+            modalTitle.className = 'modal-title';
+            modalTitle.textContent = product.Cod;
+            modalTitle.style = 'margin-left', 'auto';
+            var modalBody = document.createElement('div');
+            modalBody.className = 'modal-body';
+            var modalImg = document.createElement('img');
+            modalImg.className = 'img-fluid';
+            //agregar precio
+            var modalPrecio = document.createElement('p');
+            modalPrecio.className = 'card-text';
+            modalPrecio.textContent = 'Precio: ' + product.Precio;
+            
+            modalImg.style = 'width: 125%;';
+            modalImg.setAttribute('data-zoom-image', product.img);
+            modalImg.src = product.img;
+            modalImg.alt = product.Cod;
+            var modalFooter = document.createElement('div');
+            modalFooter.className = 'modal-footer';
+            var button = document.createElement('button');
+            button.className = 'btn btn-primary';
+            button.textContent = 'Ordenar  ';
+            var i = document.createElement('i');
+            i.className = 'fa fa-whatsapp';
+            i.style = 'color: white;'
+            button.appendChild(i)
+            button.addEventListener('click', function () {
+                shareProduct(product.Cod);
+            });
+            modalFooter.appendChild(button);
+            modalHeader.appendChild(modalTitle);
+            modalBody.appendChild(modalImg);
+            modalContent.appendChild(modalHeader);
+            modalContent.appendChild(modalBody);
+            modalContent.appendChild(modalFooter);
+            modalBody.appendChild(modalPrecio);
+            modalDialog.appendChild(modalContent);
+            modal.appendChild(modalDialog);
+            $('#modal').modal('show');
+
+
+        }
+        // Mostrar todos los productos al cargar la página
+        resetFilter();
+
+    </script>
+<a href="https://api.whatsapp.com/send?phone=+50233873562&text=Hola!" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+<a href="https://www.facebook.com/GorrasQuiche/photos" class="facebook" target="_blank"> <i class="fa fa-facebook facebook-icon"></i></a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>
