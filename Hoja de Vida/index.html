@@ -6,6 +6,11 @@
     <title>Hoja de Vida</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <!-- Asegúrate de incluir las dependencias de jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="archivo.js"></script>
+
 </head>
 
 <body>
@@ -163,21 +168,17 @@
                     </div>
                     <ul>
                         <li>
-                            <div class="date">2019 - actualidad</div>
+                            <div class="date">Actualidad</div>
                             <div class="info">
-                                <p class="semi-bold">Gerente - Cajero</p>
-                                <p>Actualmente soy Auxiliar de Gerente en Hamburguesas Doña Cony.</p>
+                                <p class="semi-bold">Analista de Sistemas</p>
+                                <p>Diseñar, desarrollar e implementar soluciones de software para mejorar los procesos y procedimientos internos en SAT.</p>
                             </div>
                         </li>
                         <li>
                             <div class="date">2017 - 2019</div>
                             <div class="info">
-                                <p class="semi-bold">TÉCNICO EN MANTENIMIENTO INDUSTRIAL Y 
-                                    SERVICIO AL CLIENTE, CIMI</p><br>
-                                <p>Mantenimiento de maquinaria industrial, asistencia y atención 
-                                    de servicio al cliente, planificación de proyectos, dibujo técnico 
-                                    de piezas industriales, fabricación de pieza de maquinaria 
-                                    industrial en torno/fresadora.</p>
+                                <p class="semi-bold">Catedratico en Computacion e Informatica</p>
+                                <p>Impartí clases de computación e informática a estudiantes de nivel Medio en Instituto Normal Mixto "San Andres".</p>
                             </div>
                         </li>
                         
@@ -229,11 +230,12 @@
                         <li><i class="fab fa-pagelines"></i></li>
                     </ul>
                 </div>
+                
             </div>
         </div>
 
-
-    
+        <button class="btn btn-primary" onclick="descargarPDF()">Descargar PDF</button>
+       
 
 </body>
 
