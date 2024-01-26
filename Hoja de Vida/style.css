@@ -101,6 +101,17 @@ body {
     font-size: 16px;
 }
 
+.free-bold {
+    text-align: justify;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.texto{
+    text-align: justify;
+}
+
 .resume {
     width: 800px;
     height: auto;
@@ -201,7 +212,7 @@ body {
 }
 
 .resume .resume_left .resume_skills ul li .skill_name {
-    width: 25%;
+    width: 100%;
 }
 
 .resume .resume_left .resume_skills ul li .barra_progreso {
@@ -235,7 +246,7 @@ body {
 .resume .resume_right {
     width: 520px;
     background: #fff;
-    padding: 25px;
+    padding: 30px;
 }
 
 .resume .resume_right .bold {
