@@ -16,5 +16,5 @@ function descargarPDF() {
       // Guarda el PDF con el nombre "mi_archivo.pdf"
       pdf.save('mi_archivo.pdf');
     });
-  }
+}
   

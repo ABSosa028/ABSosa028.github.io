@@ -1,0 +1,16 @@
+Pensamos hacer cambio de precios pero por el momento estos son
+Menu hamb simple ---- Q22.00
+Menu Torito  -----  26
+Menu pizza  ------- 20
+Menu Chevere ------ 20
+Capuchinos   ------ 15
+Men Medallones	 --- 22
+Menu Especial  -----  37
+Pizzas enteras	----- 75
+Salchipapas   -- ---   22
+Cafe Negro	----  3.5
+Cafe Con Cremora   --- 4
+Licuados    
+	con leche       10.0
+	con Agua	7.5
+Chocolate		6.5
