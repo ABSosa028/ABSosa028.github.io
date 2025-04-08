@@ -1,0 +1,385 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/dist/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/dist/mindar.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+      }
+      .example-container {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <a-scene
+      mindar-image="imageTargetSrc: mero.mind; autoStart: true;"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: true"
+      device-orientation-permission-ui="enabled: true"
+    >
+      <a-camera
+        position="0 0 0"
+        look-controls="enabled: true"
+        cursor="fuse: true; rayOrigin: mouse;"
+        raycaster="near: 10; far: 10000; objects: .clickable"
+      ></a-camera>
+    </a-scene>
+
+    <script>
+      const jsonData = {
+        mind: "mero.mind",
+        maravillas: [
+          {
+            index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            images: [
+              "./maravillas/0.jpeg",
+              "./maravillas/1.jpeg",
+              "./maravillas/2.jpeg",
+              "./maravillas/3.jpeg",
+              "./maravillas/4.jpeg",
+              "./maravillas/5.jpeg",
+              "./maravillas/6.jpeg",
+              "./maravillas/7.jpeg",
+              "./maravillas/8.jpeg",
+              "./maravillas/9.avif",
+            ],
+            videos: [
+              "./maravillas/videos/muralla1.mp4",
+              "./maravillas/videos/muralla2.mp4",
+              "./maravillas/videos/muralla3.mp4",
+            ],
+            filtro: "./assets/filtros/china.png",
+            audio: "./assets/audios/audio1.wav",
+            nombre: "Muralla China",
+            link_mapa: "Muralla China, Huai Rou Qu, China, 101406",
+            link_web: "https://www.mutianyugreatwall.com/",
+            descripcion_breve:
+              "La Gran Muralla China es una antigua fortificación china...",
+            historia_detalles:
+              "Tradicionalmente, la historia de la construcción de la Gran Muralla se divide en cinco partes...",
+            tipo: "mundo",
+            user_creacion: "admin",
+          },
+          {
+            index: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+            images: [
+              "./maravillas/10.jpeg",
+              "./maravillas/11.jpeg",
+              "./maravillas/12.jpeg",
+              "./maravillas/13.jpeg",
+              "./maravillas/14.jpeg",
+              "./maravillas/15.jpeg",
+              "./maravillas/16.jpeg",
+              "./maravillas/17.jpeg",
+              "./maravillas/18.jpeg",
+              "./maravillas/19.jpeg",
+            ],
+            videos: [
+              "./maravillas/videos/muralla1.mp4",
+              "./maravillas/videos/muralla2.mp4",
+              "./maravillas/videos/muralla3.mp4",
+            ],
+            filtro: "./assets/filtros/china.png",
+            audio: "./assets/audios/audio1.wav",
+            nombre: "Señor RIO",
+            link_mapa: "De Janeiro",
+            link_web: "https://www.rioPaulo.com/",
+            descripcion_breve: "Arriba las manos pulgares adentro.",
+            historia_detalles: "ajunanajunanjuna",
+            tipo: "mundo",
+            user_creacion: "admin",
+          },
+        ],
+      };
+
+      const data = jsonData;
+      const scene = document.querySelector("a-scene");
+
+      let todosAssetsImg = [];
+      let todosAssetsVid = [];
+      data.maravillas.forEach((element) => {
+        todosAssetsImg = todosAssetsImg.concat(element.images);
+        todosAssetsVid = todosAssetsVid.concat(element.videos);
+      });
+      console.log("Images:", todosAssetsImg);
+      console.log("Videos:", todosAssetsVid);
+
+      const assets = document.createElement("a-assets");
+      todosAssetsImg.forEach((image, idx) => {
+        const img = document.createElement("img");
+        img.setAttribute("id", `maravilla-image-${idx + 1}`);
+        img.setAttribute("src", image);
+        assets.appendChild(img);
+      });
+      todosAssetsVid.forEach((video, idx) => {
+        const vid = document.createElement("video");
+        vid.setAttribute("id", `maravilla-video-${idx}`);
+        vid.setAttribute("autoplay", "false");
+        vid.setAttribute("loop", "true");
+        vid.setAttribute("src", video);
+        assets.appendChild(vid);
+      });
+
+      const icons = [
+        { id: "icon-web", src: "./assets/web.png" },
+        { id: "icon-location", src: "./assets/location.png" },
+        { id: "icon-profile", src: "./assets/profile.png" },
+        { id: "icon-camara", src: "./assets/camara.png" },
+        { id: "icon-phone", src: "./assets/phone.png" },
+        { id: "icon-email", src: "./assets/email.png" },
+        { id: "icon-play", src: "./assets/play.png" },
+        { id: "icon-left", src: "./assets/atras.png" },
+        { id: "icon-right", src: "./assets/adelante.png" },
+      ];
+      icons.forEach((icon) => {
+        const img = document.createElement("img");
+        img.setAttribute("id", icon.id);
+        img.setAttribute("src", icon.src);
+        assets.appendChild(img);
+      });
+
+      scene.appendChild(assets);
+
+      data.maravillas.forEach((element) => {
+        const indicesMarcador = element.index; 
+        const imagenesPortafolio = element.images; 
+        const videosPortafolio = element.videos;
+
+        indicesMarcador.forEach((targetIdx) => {
+          const entity = document.createElement("a-entity");
+          entity.setAttribute("mindar-image-target", `targetIndex: ${targetIdx}`);
+          entity.setAttribute("id", "maravilla");
+          entity.setAttribute("name", element.nombre);
+
+          const plane = document.createElement("a-plane");
+          plane.setAttribute("src", `#maravilla-image-${targetIdx + 1}`);
+          plane.setAttribute("position", "0 0 0");
+          plane.setAttribute("height", "0.552");
+          plane.setAttribute("width", "1");
+          entity.appendChild(plane);
+
+          const entidadPortafolio = document.createElement("a-entity");
+          entidadPortafolio.setAttribute("position", "0 0 -0.01");
+          entidadPortafolio.setAttribute("id", `portafolio-${element.nombre.replace(/\s+/g, "")}-${targetIdx}`);
+          entidadPortafolio.setAttribute("data-current-img", "0");
+
+          const aTextPortafolio = document.createElement("a-text");
+          aTextPortafolio.setAttribute("value", `Portafolio de ${element.nombre}`);
+          aTextPortafolio.setAttribute("position", "0 0.5 0");
+          aTextPortafolio.setAttribute("width", "2");
+          aTextPortafolio.setAttribute("color", "black");
+          aTextPortafolio.setAttribute("class", "clickable");
+          aTextPortafolio.setAttribute("align", "center");
+          entidadPortafolio.appendChild(aTextPortafolio);
+
+          imagenesPortafolio.forEach((ruta, i) => {
+            const entidadImagen = document.createElement("a-entity");
+            entidadImagen.setAttribute("id", `portafolio-image-${element.nombre.replace(/\s+/g, "")}-${targetIdx}-${i}`);
+
+            if (i !== 0) {
+              entidadImagen.setAttribute("visible", "false");
+            }
+
+            const imagenEntidad = document.createElement("a-image");
+            imagenEntidad.setAttribute("src", ruta);
+            imagenEntidad.setAttribute("position", "0 1 0");
+            imagenEntidad.setAttribute("height", "0.552");
+            imagenEntidad.setAttribute("width", "1");
+
+            entidadImagen.appendChild(imagenEntidad);
+            entidadPortafolio.appendChild(entidadImagen);
+          });
+
+          const imgRegresar = document.createElement("a-image");
+          imgRegresar.setAttribute("src", "#icon-left");
+          imgRegresar.setAttribute("position", "-0.70 1 0");
+          imgRegresar.setAttribute("height", "0.25");
+          imgRegresar.setAttribute("width", "0.25");
+          imgRegresar.setAttribute("class", "clickable");
+          imgRegresar.addEventListener("click", function () {
+            let currentIndex = parseInt(entidadPortafolio.getAttribute("data-current-img"));
+            const currentEl = document.getElementById(
+              `portafolio-image-${element.nombre.replace(/\s+/g, "")}-${targetIdx}-${currentIndex}`
+            );
+            if (currentEl) currentEl.setAttribute("visible", "false");
+
+            currentIndex--;
+            if (currentIndex < 0) {
+              currentIndex = imagenesPortafolio.length - 1; 
+            }
+
+            const newEl = document.getElementById(
+              `portafolio-image-${element.nombre.replace(/\s+/g, "")}-${targetIdx}-${currentIndex}`
+            );
+            if (newEl) newEl.setAttribute("visible", "true");
+
+            entidadPortafolio.setAttribute("data-current-img", currentIndex);
+          });
+          imgRegresar.setAttribute(
+            "animation",
+            "property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          );
+          entidadPortafolio.appendChild(imgRegresar);
+
+          const imgAdelante = document.createElement("a-image");
+          imgAdelante.setAttribute("src", "#icon-right");
+          imgAdelante.setAttribute("position", "0.70 1 0");
+          imgAdelante.setAttribute("height", "0.25");
+          imgAdelante.setAttribute("width", "0.25");
+          imgAdelante.setAttribute("class", "clickable");
+          imgAdelante.addEventListener("click", function () {
+            let currentIndex = parseInt(entidadPortafolio.getAttribute("data-current-img"));
+            const currentEl = document.getElementById(
+              `portafolio-image-${element.nombre.replace(/\s+/g, "")}-${targetIdx}-${currentIndex}`
+            );
+            if (currentEl) currentEl.setAttribute("visible", "false");
+
+            currentIndex++;
+            if (currentIndex >= imagenesPortafolio.length) {
+              currentIndex = 0; 
+            }
+
+            const newEl = document.getElementById(
+              `portafolio-image-${element.nombre.replace(/\s+/g, "")}-${targetIdx}-${currentIndex}`
+            );
+            if (newEl) newEl.setAttribute("visible", "true");
+
+            entidadPortafolio.setAttribute("data-current-img", currentIndex);
+          });
+          imgAdelante.setAttribute(
+            "animation",
+            "property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          );
+          entidadPortafolio.appendChild(imgAdelante);
+
+          entity.appendChild(entidadPortafolio);
+
+          
+          const botonFiltro = document.createElement("a-image");
+          botonFiltro.setAttribute("src", "#icon-camara");
+          botonFiltro.setAttribute("position", "-0.70 -0.5 0");
+          botonFiltro.setAttribute("height", "0.25");
+          botonFiltro.setAttribute("width", "0.25");
+          botonFiltro.setAttribute("class", "clickable");
+          botonFiltro.addEventListener("click", function () {
+            window.location.href = "./Camara.html?lugar=" + element.nombre + "&filtro=" + element.filtro + "&audio=" + element.audio;
+          });
+          botonFiltro.setAttribute(
+            "animation",
+            "property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          );
+          entity.appendChild(botonFiltro);
+
+          const botonVerfil = document.createElement("a-image");
+          botonVerfil.setAttribute("src", "#icon-profile");
+          botonVerfil.setAttribute("position", "-0.42 -0.5 0");
+          botonVerfil.setAttribute("height", "0.15");
+          botonVerfil.setAttribute("class", "clickable");
+          botonVerfil.setAttribute("width", "0.15");
+          botonVerfil.addEventListener("click", function () {
+            const text = document.querySelector("#text-" + targetIdx);
+            text.setAttribute("value", element.nombre);
+          });
+          botonVerfil.setAttribute(
+            "animation",
+            "property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          );
+          entity.appendChild(botonVerfil);
+
+          const botonWeb = document.createElement("a-image");
+          botonWeb.setAttribute("src", "#icon-web");
+          botonWeb.setAttribute("position", "-0.14 -0.5 0");
+          botonWeb.setAttribute("height", "0.15");
+          botonWeb.setAttribute("class", "clickable");
+          botonWeb.setAttribute("width", "0.15");
+          botonWeb.addEventListener("click", function () {
+            const text = document.querySelector("#text-" + targetIdx);
+            text.setAttribute("value", element.link_web);
+          });
+          botonWeb.setAttribute(
+            "animation",
+            "property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          );
+          entity.appendChild(botonWeb);
+
+          const botonDescripcion = document.createElement("a-image");
+          botonDescripcion.setAttribute("id", "email-button-" + targetIdx);
+          botonDescripcion.setAttribute("src", "#icon-email");
+          botonDescripcion.setAttribute("position", "0.14 -0.5 0");
+          botonDescripcion.setAttribute("height", "0.15");
+          botonDescripcion.setAttribute("width", "0.15");
+          botonDescripcion.setAttribute("class", "clickable");
+          botonDescripcion.addEventListener("click", function () {
+            const text = document.querySelector("#text-" + targetIdx);
+            text.setAttribute("value", element.descripcion_breve);
+          });
+          botonDescripcion.setAttribute(
+            "animation",
+            "property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          );
+          entity.appendChild(botonDescripcion);
+
+          const botonMapa = document.createElement("a-image");
+          botonMapa.setAttribute("id", "location-button-" + targetIdx);
+          botonMapa.setAttribute("src", "#icon-location");
+          botonMapa.setAttribute("position", "0.42 -0.5 0");
+          botonMapa.setAttribute("height", "0.15");
+          botonMapa.setAttribute("class", "clickable");
+          botonMapa.setAttribute("width", "0.15");
+          botonMapa.addEventListener("click", function () {
+            const text = document.querySelector("#text-" + targetIdx);
+            text.setAttribute("value", element.link_mapa);
+          });
+          botonMapa.setAttribute(
+            "animation",
+            "property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          );
+          entity.appendChild(botonMapa);
+
+          const botonHistoria = document.createElement("a-image");
+          botonHistoria.setAttribute("id", "history-button-" + targetIdx);
+          botonHistoria.setAttribute("src", "#icon-play");
+          botonHistoria.setAttribute("class", "clickable");
+          botonHistoria.setAttribute("position", "0.70 -0.5 0");
+          botonHistoria.setAttribute("height", "0.15");
+          botonHistoria.addEventListener("click", function () {
+            const text = document.querySelector("#text-" + targetIdx);
+            text.setAttribute("value", element.historia_detalles);
+          });
+          botonHistoria.setAttribute("width", "0.15");
+          botonHistoria.setAttribute(
+            "animation",
+            "property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          );
+          entity.appendChild(botonHistoria);
+          const text = document.createElement("a-text");
+          text.setAttribute("id", `text-${targetIdx}`);
+          text.setAttribute("value", "");
+          text.setAttribute("position", "0 -1 0");
+          text.setAttribute("width", "2");
+          text.setAttribute("color", "black");
+          text.setAttribute("class", "clickable");
+          text.setAttribute("align", "center");
+          text.setAttribute("geometry", "primitive:plane; height: 0.1; width: 2;");
+          text.setAttribute("material", "opacity: 0.5");
+
+          entity.appendChild(text);
+
+          scene.appendChild(entity);
+        });
+      });
+    </script>
+  </body>
+</html>
