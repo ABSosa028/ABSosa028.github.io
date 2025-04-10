@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
-                "mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-three.prod.js"
-            }
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+          "mindar-face-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-three.prod.js"
         }
+      }
     </script>
-    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="./css/style.css" />
     <script type="module" src="./js/app2.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container"></div>
     <div class="filters">
-        <div class="card" id="lugar-card"></div>
-        <button id="toggle-audio" class="audio-button">🔇</button>
+      <div class="card" id="lugar-card"></div>
+      <button id="toggle-audio" class="audio-button">🔇</button>
     </div>
     <button id="capture-btn" class="capture-button">📸</button>
 
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const lugar = urlParams.get('lugar');
-        document.getElementById('lugar-card').textContent = lugar;
+      const urlParams = new URLSearchParams(window.location.search);
+      const lugar = urlParams.get("lugar");
+      document.getElementById("lugar-card").textContent = lugar;
 
-        // const audio = new Audio('./assets/audios/audio2.wav');
-        const audioParam = urlParams.get('audio');
-        const audio = new Audio(audioParam);
-        audio.loop = true;
-        audio.volume = 0.1;
+      // const audio = new Audio('./assets/audios/audio2.wav');
+      const audioParam = urlParams.get("audio");
+      const audio = new Audio(audioParam);
+      audio.loop = true;
+      audio.volume = 0.1;
 
-        const toggleBtn = document.getElementById('toggle-audio');
-        let isPlaying = false;
+      const toggleBtn = document.getElementById("toggle-audio");
+      let isPlaying = false;
 
-        toggleBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                toggleBtn.textContent = '🔇';
-            } else {
-                audio.play();
-                toggleBtn.textContent = '🔊';
-            }
-            isPlaying = !isPlaying;
-        });
+      toggleBtn.addEventListener("click", () => {
+        if (isPlaying) {
+          audio.pause();
+          toggleBtn.textContent = "🔇";
+        } else {
+          audio.play();
+          toggleBtn.textContent = "🔊";
+        }
+        isPlaying = !isPlaying;
+      });
     </script>
-</body>
+  </body>
 </html>

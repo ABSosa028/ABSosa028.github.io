@@ -22,35 +22,56 @@ const setup = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const filtroURL = urlParams.get('filtro');
 
-    // Cargar filtro facial dinámicamente
-    const texture = new THREE.TextureLoader().load(filtroURL);
-    const geometry = new THREE.PlaneGeometry(1, 1);
-    const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
-    faceMesh = new THREE.Mesh(geometry, material);
-    faceMesh.scale.set(2, 2, 1);
-    const anchor = mindarThree.addAnchor(1);
-    anchor.group.add(faceMesh);
+    // Solo crear faceMesh si el filtro no es antigua.jpg
+    if (!filtroURL.includes('antigua.png')) {
+        const texture = new THREE.TextureLoader().load(filtroURL);
+        const geometry = new THREE.PlaneGeometry(1, 1);
+        const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+        faceMesh = new THREE.Mesh(geometry, material);
+        faceMesh.scale.set(2, 2, 1);
+        const anchor = mindarThree.addAnchor(1);
+        anchor.group.add(faceMesh);
 
-    if (filtroURL.includes('romano.png')) {
-        faceMesh.position.set(0, 0.35, 0);
-        faceMesh.scale.set(2.5, 2.5, 2.5);
-    } else if (filtroURL.includes('llama.png')) {
-        faceMesh.scale.set(0.35, 0.35, 0.35);
-        faceMesh.position.set(0, 0, 0);
-        isLlama = true; // Activamos la animación de la llama
-    } else if (filtroURL.includes('turbante.png')) {
-        faceMesh.position.set(0, 0.25, 0);
-    } else if (filtroURL.includes('petra.png')) {
-        faceMesh.scale.set(0.6, 0.6, 0.6);
-        faceMesh.position.set(0, -0.1, 0);
-        isLlama = true;
-    } else if (filtroURL.includes('brasil.png')) {
-        // faceMesh.scale.set(0.7, 0.7, 0.7);
-        faceMesh.position.set(0, 0.4, 0);
+        // Ajustes por tipo de filtro
+        if (filtroURL.includes('romano.png')) {
+            faceMesh.position.set(0, 0.35, 0);
+            faceMesh.scale.set(2.5, 2.5, 2.5);
+        } else if (filtroURL.includes('llama.png')) {
+            faceMesh.scale.set(0.35, 0.35, 0.35);
+            faceMesh.position.set(0, 0, 0);
+            isLlama = true;
+        } else if (filtroURL.includes('turbante.png')) {
+            faceMesh.position.set(0, 0.25, 0);
+        } else if (filtroURL.includes('petra.png')) {
+            faceMesh.scale.set(0.6, 0.6, 0.6);
+            faceMesh.position.set(0, -0.1, 0);
+            isLlama = true;
+        } else if (filtroURL.includes('brasil.png')) {
+            faceMesh.position.set(0, 0.4, 0);
+        } else if (filtroURL.includes('semuc.png')) {
+            faceMesh.scale.set(0.6, 0.6, 0.6);
+            faceMesh.position.set(0, 0, 0);
+            isLlama = true;
+        } else if (filtroURL.includes('fuentes.png')) {
+            faceMesh.scale.set(0.5, 0.5, 0.5);
+            faceMesh.position.set(0, 0, 0);
+            isLlama = true;
+        }
+        else if (filtroURL.includes('mirador.png')) {
+            faceMesh.scale.set(0.5, 0.5, 0.5);
+            faceMesh.position.set(0, 0, 0);
+            isLlama = true;
+        }
+    }
+
+    // Determinar la textura de vegetación
+    let leafTexturePath = './assets/vegetacion.png';
+    if (filtroURL.includes('antigua.png')) {
+        leafTexturePath = filtroURL;
     }
 
     // Cargar vegetación
-    const leafTexture = new THREE.TextureLoader().load('./assets/vegetacion.png');
+    const leafTexture = new THREE.TextureLoader().load(leafTexturePath);
     const leafGeometry = new THREE.PlaneGeometry(1, 1);
     const leafMaterial = new THREE.MeshBasicMaterial({ map: leafTexture, transparent: true });
     leaf = new THREE.Mesh(leafGeometry, leafMaterial);
@@ -89,7 +110,6 @@ const start = async () => {
         if (isLlama && faceMesh) {
             faceMesh.position.x += 0.01 * direction;
 
-            // Cambiar de dirección si alcanza los límites
             if (faceMesh.position.x > 0.5 || faceMesh.position.x < -0.5) {
                 direction *= -1;
             }

@@ -2,206 +2,311 @@
   "mind": "completa.mind",
   "maravillas": [
     {
-      "index": [0, 1, 2],
+      "index": [
+        0,
+        1,
+        2
+      ],
       "images": [
-        "./images/maravillas/1. Gran Muralla China/0.jpeg",
-        "./images/maravillas/1. Gran Muralla China/1.jpeg",
-        "./images/maravillas/1. Gran Muralla China/2.jpeg"
+        "./images/maravillas2/MC/0.jpeg",
+        "./images/maravillas2/MC/1.jpeg",
+        "./images/maravillas2/MC/2.jpeg"
       ],
-      "videos": [
-        "./maravillas/videos/muralla1.mp4",
-        "./maravillas/videos/muralla2.mp4",
-        "./maravillas/videos/muralla3.mp4"
-      ],
-      "filtros": "filtro1",
+      "videos": [],
+      "filtro": "./assets/filtros/china.png",
       "nombre": "Muralla China",
       "link_mapa": "Muralla China, Huai Rou Qu, China, 101406",
       "link_web": "https://www.mutianyugreatwall.com",
       "descripcion_breve": "La Gran Muralla China es una antigua fortificación china, construida y reconstruida entre el siglo V a. C. y el siglo XVI para proteger la frontera norte del Imperio chino durante las sucesivas dinastías imperiales de los ataques de los nómadas xiongnu de Mongolia y Manchuria.",
-      "historia_detalles": "Tradicionalmente, la historia de la construcción de la Gran Muralla se divide en cinco partes: Una antes de la unificación de la dinastía Qin (221 a. C.), durante el período de Primaveras y otoños y los Reinos Combatientes. La segunda, a partir de la unificación de la dinastía Qin, cuando el emperador Qin Shi Huang inició la construcción de un muro en la frontera norte. Periodo de la dinastía Han Periodo de baja actividad Periodo de la dinastía Ming",
+      "historia_detalles": "Tradicionalmente, la historia de la construcción de la Gran Muralla se divide en cinco partes Una antes de la unificación de la dinastía Qin (221 a. C.), durante el período de Primaveras y otoños y los Reinos Combatientes. La segunda, a partir de la unificación de la dinastía Qin, cuando el emperador Qin Shi Huang inició la construcción de un muro en la frontera norte. Periodo de la dinastía Han Periodo de baja actividad Periodo de la dinastía Ming",
       "tipo": "mundo",
-      "user_creacion": "admin"
+      "user_creacion": "admin",
+      "audio": "./assets/audios/audio2.wav"
     },
     {
-      "index": [3,4,5],
+      "index": [
+        3,
+        4,
+        5
+      ],
       "images": [
-        "./images/maravillas/2. Chichen Itzá, México/0.jpeg",
-        "./images/maravillas/2. Chichen Itzá, México/1.jpeg",
-        "./images/maravillas/2. Chichen Itzá, México/2.jpeg"
+        "./images/maravillas2/CITZ/0.jpeg",
+        "./images/maravillas2/CITZ/1.jpeg",
+        "./images/maravillas2/CITZ/2.jpeg"
       ],
-      "videos": [
-        "./videos/chichen_itza1.mp4",
-        "./videos/chichen_itza2.mp4"
-      ],
-      "filtros": "filtro1",
+      "videos": [],
+      "filtro": "./assets/filtros/chichenItza.png",
+      "audio": "./assets/audios/audio2.wav",
       "nombre": "Chichén Itzá",
       "link_mapa": "Chichén Itzá, Yucatán, México",
-      "link_web": "https://www.chichenitza.com/",
+      "link_web": "https//www.chichenitza.com/",
       "descripcion_breve": "Chichén Itzá es un sitio arqueológico maya ubicado en Yucatán, México. Fue una de las principales ciudades mayas y se caracteriza por construcciones como El Castillo o Templo de Kukulcán, el Juego de Pelota y el Observatorio.",
       "historia_detalles": "Chichén Itzá fue fundada alrededor del año 525 d.C. y se convirtió en uno de los centros políticos, económicos y religiosos más importantes de la civilización maya. La ciudad combina diferentes estilos arquitectónicos, reflejando la mezcla cultural de la época. El legendario El Castillo o Templo de Kukulcán es una pirámide de 30 metros de altura con 365 escalones, uno por cada día del año.",
       "tipo": "mundo",
       "user_creacion": "admin"
     },
     {
-      "index": [6,7,8],
+      "index": [
+        6,
+        7,
+        8
+      ],
       "images": [
-        "./images/maravillas/3. Coliseo Romano/0.jpeg",
-        "./images/maravillas/3. Coliseo Romano/1.jpeg"
+        "./images/maravillas2/Petra/0.jpeg",
+        "./images/maravillas2/Petra/1.jpeg",
+        "./images/maravillas2/Petra/2.jpeg"
       ],
-      "videos": [
-        "./videos/coliseo1.mp4"
-      ],
-      "filtros": "filtro1",
-      "nombre": "Coliseo Romano",
-      "link_mapa": "Piazza del Colosseo, 1, 00184 Roma RM, Italia",
-      "link_web": "https://www.colosseum.it/",
-      "descripcion_breve": "El Coliseo Romano es un anfiteatro de la época del Imperio romano, construido en el siglo I. Es una de las obras arquitectónicas más emblemáticas de la antigua Roma y uno de los monumentos más visitados del mundo.",
-      "historia_detalles": "Construido entre los años 70-80 d.C. bajo los emperadores Vespasiano y Tito, el Coliseo (o Anfiteatro Flavio) tenía capacidad para unos 50,000 espectadores que asistían a espectáculos como luchas de gladiadores, batallas navales (naumaquias), recreaciones de batallas famosas, ejecuciones de criminales y caza de animales exóticos.",
-      "tipo": "mundo",
-      "user_creacion": "admin"
-    },
-    {
-      "index": [9,10,11],
-      "images": [
-        "./images/maravillas/4. Machu Picchu, Perú/0.jpeg",
-        "./images/maravillas/4. Machu Picchu, Perú/1.jpeg"
-      ],
-      "videos": [
-        "./videos/machu_picchu1.mp4"
-      ],
-      "filtros": "filtro1",
-      "nombre": "Machu Picchu",
-      "link_mapa": "Machu Picchu, Perú",
-      "link_web": "https://www.machupicchu.gob.pe/",
-      "descripcion_breve": "Machu Picchu es una antigua ciudad inca ubicada en la Cordillera Oriental del sur de Perú. Es conocida por sus impresionantes ruinas y la espectacular montaña que se eleva detrás de ella, Huayna Picchu.",
-      "historia_detalles": "Construida en el siglo XV, Machu Picchu fue abandonada cuando los españoles conquistaron el Imperio Inca. La ciudad permaneció desconocida para el mundo exterior hasta 1911, cuando el historiador estadounidense Hiram Bingham la dio a conocer. Desde entonces, se ha convertido en uno de los destinos turísticos más famosos de Sudamérica.",
-      "tipo": "mundo",
-      "user_creacion": "admin"
-    },
-    {
-      "index": [12,13,14],
-      "images": [
-        "./images/maravillas/5. Taj Mahal, India/0.jpeg",
-        "./images/maravillas/5. Taj Mahal, India/1.jpeg"
-      ],
-      "videos": [
-        "./videos/taj_mahal1.mp4"
-      ],
-      "filtros": "filtro1",
-      "nombre": "Taj Mahal",
-      "link_mapa": "Taj Mahal, Agra, Uttar Pradesh, India",
-      "link_web": "https://www.tajmahal.gov.in/",
-      "descripcion_breve": "El Taj Mahal es un mausoleo de mármol blanco ubicado en Agra, India. Fue construido por el emperador Shah Jahan en memoria de su esposa Mumtaz Mahal, y es un ejemplo impresionante de la arquitectura mogol.",
-      "historia_detalles": "Construido entre 1632 y 1653, el Taj Mahal es considerado la mayor obra arquitectónica de la cultura indo-islámica. La construcción empleó a más de 20,000 artesanos bajo la dirección de un consejo de arquitectos liderado por Ustad Ahmad Lahauri. El complejo está rodeado por jardines que siguen el diseño chahar bagh (jardín dividido en cuatro partes).",
-      "tipo": "mundo",
-      "user_creacion": "admin"
-    },
-    {
-      "index": [15, 16, 17],
-      "images": [
-        "./images/maravillas/6. Cristo Redentor, Brasil/0.jpeg",
-        "./images/maravillas/6. Cristo Redentor, Brasil/1.jpeg"
-      ],
-      "videos": [
-        "./videos/cristo_redentor1.mp4"
-      ],
-      "filtros": "filtro1",
-      "nombre": "Cristo Redentor",
-      "link_mapa": "Parque Nacional da Tijuca - Alto da Boa Vista, Río de Janeiro - RJ, Brasil",
-      "link_web": "https://www.cristoredentoroficial.com.br/",
-      "descripcion_breve": "El Cristo Redentor es una estatua de Jesús de Nazaret con los brazos abiertos que se encuentra en la ciudad de Río de Janeiro, Brasil. Es una de las estatuas más famosas del mundo y se ha convertido en un símbolo cultural de Brasil.",
-      "historia_detalles": "La estatua tiene 30 metros de altura, sin considerar su base de 8 metros, y fue inaugurada el 12 de octubre de 1931 después de aproximadamente cinco años de construcción. Está ubicada en la cima del cerro del Corcovado a 710 metros sobre el nivel del mar, desde donde ofrece una vista panorámica de la ciudad de Río de Janeiro.",
-      "tipo": "mundo",
-      "user_creacion": "admin"
-    },
-    {
-      "index": [18, 19, 20],
-      "images": [
-        "./images/maravillas/7. Petra, Jordania/0.jpeg",
-        "./images/maravillas/7. Petra, Jordania/1.jpeg"
-      ],
-      "videos": [
-        "./videos/petra1.mp4"
-      ],
-      "filtros": "filtro1",
+      "videos": [],
+      "filtro": "./assets/filtros/petra.png",
+      "audio": "./assets/audios/audio2.wav",
       "nombre": "Petra",
-      "link_mapa": "Petra, Jordania",
-      "link_web": "http://www.visitpetra.jo/",
-      "descripcion_breve": "Petra es una antigua ciudad nabatea ubicada en el suroeste de Jordania. Es famosa por su arquitectura tallada en la roca y su sistema de conductos de agua.",
-      "historia_detalles": "Fundada alrededor del siglo VI a.C., Petra fue la capital del Reino Nabateo y un importante centro de comercio en la ruta de las especias. La ciudad fue tallada directamente en la piedra arenisca rosada, creando impresionantes estructuras como Al-Khazneh (El Tesoro). Permaneció oculta para el mundo occidental hasta 1812, cuando fue redescubierta por el explorador suizo Johann Ludwig Burckhardt.",
+      "link_mapa": "https://maps.app.goo.gl/MoqAie5aJ49bxUCq6",
+      "link_web": "https://viajes.nationalgeographic.com.es/a/petra-que-ver-joya-nabatea-jordania-80-todavia-oculto_13675",
+      "descripcion_breve": "El asentamiento de Petra se localiza en un valle angosto, al este del valle de Arabá que se extiende desde el mar Muerto hasta el golfo de Áqaba. Los restos más célebres de Petra son sin duda sus construcciones labradas en la misma roca del valle (hemispeos), en particular, los edificios conocidos como el Khazneh (‘el Tesoro’) y el Deir (‘el Monasterio’).",
+      "historia_detalles": "La situación de Petra, construida en gran parte en la misma roca, como si de una escultura se tratase, está por eso mismo embutida entre rocas abruptas y empinadas, entre los pasadizos o pequeños cañones excavados por la erosión del agua a través de miles de años. Dispone de un suministro seguro de agua, lo que hace que sea un lugar propicio para el desarrollo de una próspera ciudad. El lugar es accesible solo por un estrecho sendero de montaña por el noroeste, o al este a través de un cañón de aproximadamente 1,5 km de longitud y hasta 200 m (metros) de altura, el Siq, el acceso principal, que en su lugar más estrecho mide apenas dos metros de ancho.",
       "tipo": "mundo",
       "user_creacion": "admin"
     },
     {
-      "index": [21, 22, 23],
+      "index": [
+        9,
+        10,
+        11
+      ],
       "images": [
-        "./images/maravillas/guatemala/1. Tikal/0.jpeg",
-        "./images/maravillas/guatemala/1. Tikal/1.jpeg"
+        "./images/maravillas2/MP/0.jpeg",
+        "./images/maravillas2/MP/1.jpeg",
+        "./images/maravillas2/MP/2.jpeg"
       ],
-      "videos": [
-        "./videos/tikal1.mp4"
+      "videos": [],
+      "filtro": "./assets/filtros/llama.png",
+      "audio": "./assets/audios/audio2.wav",
+      "nombre": "Machu Picchu",
+      "link_mapa": "httpsg.co/kgs/ERN9Nvc",
+      "link_web": "httpswww.machupicchu.gob.pe",
+      "descripcion_breve": "Esta antigua ciudad inca es uno de los tesoros más preciados de Perú. ",
+      "historia_detalles": "Machu Picchu fue construido en el estilo Inca clásico, con paredes de piedra seca pulida.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [
+        12,
+        13,
+        14
       ],
-      "filtros": "filtro2",
+      "images": [
+        "./images/maravillas2/CR/0.jpeg",
+        "./images/maravillas2/CR/1.jpeg",
+        "./images/maravillas2/CR/2.jpeg"
+      ],
+      "videos": [],
+      "filtro": "./assets/filtros/brasil.png",
+      "audio": "./assets/audios/audio2.wav",
+      "nombre": "Cristo Redentor",
+      "link_mapa": "httpsmaps.app.goo.gl/NM5ouFkc4G2W35Df7",
+      "link_web": "httpsmaps.app.goo.gl/NM5ouFkc4G2W35Df7",
+      "descripcion_breve": "Cristo Redentor o Cristo del Corcovado (en portugués Cristo do Corcovado) es una estatua art déco que representa a Jesús de Nazaret",
+      "historia_detalles": "Construida en 1922 por la Iglesia Católica, la estatua del Cristo Redentor se encuentra dentro del Parque Nacional de Tijuca",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [
+        15,
+        16,
+        17
+      ],
+      "images": [
+        "./images/maravillas2/C/0.jpeg",
+        "./images/maravillas2/C/1.jpeg",
+        "./images/maravillas2/C/2.jpeg"
+      ],
+      "videos": [],
+      "filtro": "./assets/filtros/romano.png",
+      "audio": "./assets/audios/audio3.wav",
+      "nombre": "Coliseo Romano",
+      "link_mapa": "httpsmaps.app.goo.gl/iufGJKKeCwFyHk5a9",
+      "link_web": "httpswww.colosseumdiroma-tickets.com/es?utm_source=google&utm_medium=cpc&utm_campaign=coliseo_esp_esp_sea&utm_content=coliseo_esp_esp&gad_source=1&gclid=CjwKCAjwtdi_BhACEiwA97y8BDQivPnxW0qdeyMXXAZWcyUTgxLVVw6JErrEGswX9x6znqVbLZIyWRoCgkEQAvD_BwE",
+      "descripcion_breve": "El Coliseo de Roma es uno de los monumentos más emblemáticos del mundo, atrayendo a millones de turistas cada año. Antes de que te aventures a explorar este impresionante anfiteatro del Coliseo, es importante que conozcas algunos detalles clave para aprovechar al máximo tu visita.",
+      "historia_detalles": "El Coliseo, construido en el siglo I d.C., ha presenciado una infinidad de eventos a lo largo del tiempo, tanto combates de gladiadores como grandes espectáculos. Su increíble estructura y su enriquecedora historia lo convierten en un lugar fascinante para descubrir.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [
+        18,
+        19,
+        20
+      ],
+      "images": [
+        "./images/maravillas2/TM/0.jpeg",
+        "./images/maravillas2/TM/1.jpeg",
+        "./images/maravillas2/TM/2.jpeg"
+      ],
+      "videos": [],
+      "filtro": "./assets/filtros/turbante.png",
+      "audio": "./assets/audios/audio4.wav",
+      "nombre": "Taj Mahal",
+      "link_mapa": "httpsmaps.app.goo.gl/XM6qtx44xb7HjW9N6",
+      "link_web": "httpswww.ilustre.co/blog/tajmahal_islam",
+      "descripcion_breve": "Obra Maestra de la Arquitectura Islámica y Símbolo del Amor Eterno",
+      "historia_detalles": "El Taj Mahal, situado en Agra, India, es posiblemente uno de los monumentos más reconocibles y celebrados del mundo, representando la cúspide de la arquitectura islámica en la India mogol. Este mausoleo de mármol blanco, construido por el emperador Shah Jahan en memoria de su esposa Mumtaz Mahal, es un testimonio del amor eterno y del esplendor artístico del período mogol. El Taj Mahal combina elementos de la arquitectura islámica, persa, otomana e india, creando una obra maestra arquitectónica que es admirada por su simetría, sus intrincados patrones de incrustaciones de piedra y su impresionante cúpula. Su diseño refleja los conceptos del paraíso en el Islam, con sus jardines, fuentes y el reflejo del edificio en el estanque central, invitando a la contemplación y al asombro.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [
+        21,
+        22,
+        23
+      ],
+      "images": [
+        "./images/guatemala/T/0.jpeg",
+        "./images/guatemala/T/1.jpeg",
+        "./images/guatemala/T/2.jpeg"
+      ],
+      "videos": [],
+      "filtro": "./assets/filtros/tikal.png",
+      "audio": "./assets/audios/audio2.wav",
       "nombre": "Tikal",
-      "link_mapa": "Tikal, Guatemala",
-      "link_web": "https://www.visitguatemala.com/tikal/",
-      "descripcion_breve": "Tikal es uno de los mayores yacimientos arqueológicos de la civilización maya precolombina, ubicado en el departamento de Petén, Guatemala.",
-      "historia_detalles": "Tikal fue una de las ciudades más importantes del periodo Clásico de la civilización maya, entre los años 200 y 900 d.C. El sitio ocupa un área de más de 16 kilómetros cuadrados y contiene más de 3,000 estructuras. Entre sus edificaciones más notables se encuentran el Templo del Gran Jaguar (Templo I) y el Templo de las Máscaras (Templo II).",
-      "tipo": "guatemala",
+      "link_mapa": "httpsmaps.app.goo.gl/EoXjLBfwz8NVfQgh8",
+      "link_web": "httpstikalnationalpark.org",
+      "descripcion_breve": "La antigua ciudad Maya de Tikal",
+      "historia_detalles": " Petén, en el norte de Guatemala y fue creado bajo decreto gubernativo de 26 de mayo de 1955",
+      "tipo": "mundo",
       "user_creacion": "admin"
     },
     {
-      "index": [24, 25, 26],
+      "index": [
+        24,
+        25,
+        26
+      ],
       "images": [
-        "./images/maravillas/guatemala/2. Lago de Atitlán/0.jpeg",
-        "./images/maravillas/guatemala/2. Lago de Atitlán/1.jpeg"
+        "./images/guatemala/LA/0.jpeg",
+        "./images/guatemala/LA/1.jpeg",
+        "./images/guatemala/LA/2.jpeg"
       ],
-      "videos": [
-        "./videos/atitlan1.mp4"
-      ],
-      "filtros": "filtro2",
-      "nombre": "Lago de Atitlán",
-      "link_mapa": "Lago de Atitlán, Sololá, Guatemala",
-      "link_web": "https://www.visitguatemala.com/atitlan/",
-      "descripcion_breve": "El Lago de Atitlán es un lago de origen volcánico situado en el departamento de Sololá, Guatemala. Está rodeado por tres volcanes y varios pueblos mayas.",
-      "historia_detalles": "El Lago de Atitlán se formó hace aproximadamente 84,000 años tras una erupción volcánica. Está rodeado por los volcanes Atitlán, Tolimán y San Pedro. En sus orillas se encuentran diversos pueblos indígenas que conservan sus tradiciones, lenguas y vestimenta tradicional. El escritor Aldous Huxley lo describió como 'el lago más bello del mundo'.",
-      "tipo": "guatemala",
+      "videos": [],
+      "filtro": "./assets/filtros/atitlan.png",
+      "audio": "./assets/audios/audio2.wav",
+      "nombre": "Lago de Atitlan",
+      "link_mapa": "httpsmaps.app.goo.gl/uHJ6XwJywToABJ3S6",
+      "link_web": "httpses.wikipedia.org/wiki/Lago_de_Atitlán",
+      "descripcion_breve": "El significado de la palabra «Atitlán» deriva etimológicamente del náhuatl. Es un topónimo aglutinado que se estructura en la siguiente forma Atl significa «Agua», Titlan significa «entre». La palabra Atl («agua») pierde su terminación «tl» para unirse con la palabra titlan («entre»), por lo tanto, la palabra «Atitlán» se traduce como «entre las aguas».",
+      "historia_detalles": "El Lago de Atitlán es el lago más profundo de Centroamérica y es el segundo lago más grande por superficie de Guatemala. 1 Su parte más profunda se encuentra a 340 metros aproximadamente, 2 mientras la profundidad media es de 220 metros. Es una importante fuente económica del Departamento de Sololá, donde queda ubicado, así como un centro turístico de gran interés comercial. El lago de Atitlán es reconocido como uno de los lagos más bellos del planeta Tierra y es una de las atracciones turísticas nacionales e internacionales más importantes de toda Guatemala. El explorador y naturalista alemán Alexander von Humboldt y National Geographic han denominado a este lugar como el lago más hermoso del mundo",
+      "tipo": "mundo",
       "user_creacion": "admin"
     },
     {
-      "index": [27, 28, 29],
+      "index": [
+        27,
+        28,
+        29
+      ],
       "images": [
-        "./images/maravillas/guatemala/3. Antigua Guatemala/0.jpeg",
-        "./images/maravillas/guatemala/3. Antigua Guatemala/1.jpeg"
+        "./images/guatemala/SC/0.jpeg",
+        "./images/guatemala/SC/1.jpeg",
+        "./images/guatemala/SC/2.jpeg"
       ],
-      "videos": [
-        "./videos/antigua1.mp4"
+      "videos": [],
+      "filtro": "./assets/filtros/semuc.png",
+      "audio": "./assets/audios/audio2.wav",
+      "nombre": "Semuc Champey",
+      "link_mapa": "httpsmaps.app.goo.gl/QQUb2GTVL6vdaRoA6",
+      "link_web": "httpssemucchampeytour.carrd.co/",
+      "descripcion_breve": "El nombre Semuc Champey viene del q'eqchi' xmuq esconder, cham hondo y pek piedra.",
+      "historia_detalles": "Semuc Champey fue declarado en 1999 Monumento Natural por el entonces presidente de la República de Guatemala, Álvaro Arzú Irigoyen y se encuentra muy próximo geográficamente al parque nacional Grutas de Lanquín con el que comparte un centro de visitantes para dar cobertura al turista.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [
+        30,
+        31,
+        32
       ],
-      "filtros": "filtro2",
+      "images": [
+        "./images/guatemala/AG/0.jpeg",
+        "./images/guatemala/AG/1.jpeg",
+        "./images/guatemala/AG/2.jpeg"
+      ],
+      "videos": [],
+      "filtro": "./assets/filtros/antigua.png",
+      "audio": "./assets/audios/audio2.wav",
       "nombre": "Antigua Guatemala",
-      "link_mapa": "Antigua Guatemala, Sacatepéquez, Guatemala",
-      "link_web": "https://www.visitguatemala.com/antigua/",
-      "descripcion_breve": "Antigua Guatemala es una ciudad colonial ubicada en el departamento de Sacatepéquez. Es famosa por su arquitectura barroca española y sus ruinas de iglesias y conventos.",
-      "historia_detalles": "Fundada en 1543 como la tercera capital de Guatemala, Antigua fue durante más de 200 años el centro político, religioso y económico del Reino de Guatemala. La ciudad fue destruida parcialmente por terremotos en 1773, lo que llevó al traslado de la capital a lo que hoy es Ciudad de Guatemala. Gracias a esto, Antigua conserva su arquitectura colonial y fue declarada Patrimonio de la Humanidad por la UNESCO en 1979.",
-      "tipo": "guatemala",
+      "link_mapa": "httpsmaps.app.goo.gl/dG6amKSg9dnnDi6L7",
+      "link_web": "httpes.wikipedia.org/wiki/Antigua_Guatemala",
+      "descripcion_breve": "Antigua, the capital of the Captaincy-General of Guatemala, was founded in the early 16th century. Built 1,500 m above sea-level, in an earthquake-prone region, it was largely destroyed by an earthquake in 1773 but its principal monuments are still preserved as ruins. In the space of under three centuries the city, which was built on a grid pattern inspired by the Italian Renaissance, acquired a number of superb monuments.",
+      "historia_detalles": "Antigua es una pequeña ciudad rodeada por volcanes en el sur de Guatemala. Es famosa por sus edificios coloniales españoles, muchos de ellos restaurados después del terremoto de 1773 que terminó con el régimen de 200 años de Antigua como la capital colonial de Guatemala. Algunos ejemplos destacados de la arquitectura incluyen La Merced, una baja iglesia amarilla y blanca de estilo barroco. Es una parte integral de la famosa Semana Santa en la ciudad, con desfiles y rituales. ",
+      "tipo": "mundo",
       "user_creacion": "admin"
     },
     {
-      "index": [30, 31, 32],
+      "index": [
+        33,
+        34,
+        35
+      ],
       "images": [
-        "./images/maravillas/other/1. USAC/0.jpeg",
-        "./images/maravillas/other/1. USAC/1.jpeg"
+        "./images/guatemala/FG/0.jpeg",
+        "./images/guatemala/FG/1.jpeg",
+        "./images/guatemala/FG/2.jpeg"
       ],
-      "videos": [
-        "./videos/usac1.mp4"
+      "videos": [],
+      "filtro": "./assets/filtros/fuentes.png",
+      "audio": "./assets/audios/audio2.wav",
+      "nombre": "Fuentes Georginas",
+      "link_mapa": "httpsmaps.app.goo.gl/WCwBPHcMi8Np6WLk6",
+      "link_web": "httpsaprende.guatemala.com/historia/geografia/fuentes-georginas-quetzaltenango/",
+      "descripcion_breve": "Las Fuentes Georginas es un balneario localizado en el departamento de Quetzaltenango",
+      "historia_detalles": "Historia de las Fuentes Georginas Fueron descubiertas por dos jornaleros de Zunil en 1902 y se convirtieron en baños comunales.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [
+        36,
+        37,
+        38
       ],
-      "filtros": "filtro3",
-      "nombre": "Universidad de San Carlos de Guatemala",
-      "link_mapa": "Ciudad Universitaria, Guatemala",
-      "link_web": "https://www.usac.edu.gt/",
-      "descripcion_breve": "La Universidad de San Carlos de Guatemala (USAC) es la universidad más grande y antigua de Guatemala, siendo además la única universidad estatal del país.",
-      "historia_detalles": "Fundada el 31 de enero de 1676 por Real Cédula de Carlos II, la USAC es una de las universidades más antiguas de América. Durante la época colonial se llamó Real y Pontificia Universidad de San Carlos Borromeo. Actualmente cuenta con centros universitarios en casi todos los departamentos de Guatemala y es considerada la cuarta universidad fundada en América.",
-      "tipo": "other",
+      "images": [
+        "./images/guatemala/EM/0.jpeg",
+        "./images/guatemala/EM/1.jpeg",
+        "./images/guatemala/EM/2.jpeg"
+      ],
+      "videos": [],
+      "filtro": "./assets/filtros/mirador.png",
+      "audio": "./assets/audios/audio2.wav",
+      "nombre": "El Mirador ",
+      "link_mapa": "httpsmaps.app.goo.gl/fMRm4TzP7uXjEfqq5",
+      "link_web": "httpsmiradorbasin.com",
+      "descripcion_breve": "El Mirador Del Rey Canek, Peten se caracteriza por ubicarse en medio de la selva petenera",
+      "historia_detalles": " El Mirador del Rey Canek es un mirador en la península de Tayasal, Guatemala, que cuenta con estelas mayas y ruinas arqueológicas.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [
+        39,
+        40,
+        41
+      ],
+      "images": [
+        "./images/guatemala/CC/0.jpeg",
+        "./images/guatemala/CC/1.jpeg",
+        "./images/guatemala/CC/2.jpeg"
+      ],
+      "videos": [],
+      "filtro": "./assets/filtros/chichicastenango.png",
+      "audio": "./assets/audios/audio2.wav",
+      "nombre": "Chichicastenango",
+      "link_mapa": "httpsmaps.app.goo.gl/YcF37m3CVr2V7eYE8",
+      "link_web": "httpsguatemaltecaviajando.com/hacer-ver-chichicastenango/",
+      "descripcion_breve": "Lugares turísticos en Chichicastenango, Quiché · Cementerio General de Chichicastenango",
+      "historia_detalles": " Su nombre significa Pueblo entre Ortigas, y se ubica a apenas 145 kilómetros de la capital.",
+      "tipo": "mundo",
       "user_creacion": "admin"
     }
   ]

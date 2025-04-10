@@ -22,9 +22,10 @@
       }
     </style>
   </head>
+
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: mero.mind; autoStart: true;"
+      mindar-image="imageTargetSrc: completo.mind; autoStart: true;"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: true"
@@ -39,96 +40,9 @@
     </a-scene>
 
     <script>
-      function loadMaravillasData() {
-        try {
-          const originalJSON = localStorage.getItem("originalMaravillasJSON");
-          if (originalJSON) {
-            const parsedData = JSON.parse(originalJSON);
-            if (parsedData.maravillas && Array.isArray(parsedData.maravillas)) {
-              console.log("Cargando datos desde originalMaravillasJSON");
-              return parsedData;
-            }
-          }
-          const siteDB = localStorage.getItem("siteDB");
-          if (siteDB) {
-            const sites = JSON.parse(siteDB);
-            let maravillas = Object.entries(sites).map(([id, site]) => {
-              return {
-                index: site.index || [],
-                images: site.images || [],
-                videos: site.videos || [],
-                filtros: site.filtros || "filtro1",
-                nombre: site.nombre || id,
-                link_mapa: site.link_mapa || "",
-                link_web: site.link_web || "",
-                descripcion_breve: site.descripcion_breve || "",
-                historia_detalles: site.historia_detalles || "",
-                tipo: site.tipo || "mundo",
-                user_creacion: site.user_creacion || "admin",
-              };
-            });
-            if (maravillas.length > 0) {
-              return { mind: "completa.mind", maravillas };
-            }
-          }
+      let infoLocalSotorage = localStorage.getItem("originalMaravillasJSON");
+      const parsedDataSotage = JSON.parse(infoLocalSotorage);
 
-          // 3. Verificar si existe turisarSites (formato alternativo admin)
-          const turisarSites = localStorage.getItem("turisarSites");
-          if (turisarSites) {
-            const sites = JSON.parse(turisarSites);
-            maravillas = sites.map((site, index) => {
-              const baseIndex = index * 10;
-              const indices = [];
-              for (let i = 0; i < 10; i++) {
-                indices.push(baseIndex + i);
-              }
-
-              return {
-                index: indices,
-                images: site.images || [],
-                videos: [],
-                filtros: site.filterType || "filtro1",
-                nombre: site.name || site.id,
-                link_mapa: site.mapLink || "",
-                link_web: site.webLink || "",
-                descripcion_breve: site.description || "",
-                historia_detalles: site.history || "",
-                tipo: site.type || "mundo",
-                user_creacion: "admin",
-              };
-            });
-
-            if (maravillas.length > 0) {
-              console.log(
-                "Cargando datos desde turisarSites:",
-                maravillas.length,
-                "sitios encontrados"
-              );
-              return {
-                mind: "completa.mind",
-                maravillas: maravillas,
-              };
-            }
-          }
-
-          // Si no se encontró ninguna fuente de datos, mostrar mensaje y retornar estructura básica
-          console.log("No se encontraron datos en localStorage");
-          showNoDataMessage();
-
-          // Retornar un objeto vacío pero con la estructura correcta
-          return {
-            mind: "completa.mind",
-            maravillas: [],
-          };
-        } catch (error) {
-          console.error("Error al cargar datos desde localStorage:", error);
-          showNoDataMessage();
-          return {
-            mind: "completa.mind",
-            maravillas: [],
-          };
-        }
-      }
       const jsonData = {
         mind: "mero.mind",
         maravillas: [
@@ -194,10 +108,11 @@
           },
         ],
       };
-
-      const data = originalJSON;
+      const data = parsedDataSotage;
       const scene = document.querySelector("a-scene");
 
+      console.error("Data:", data);
+      console.error("Data:", jsonData);
       let todosAssetsImg = [];
       let todosAssetsVid = [];
       data.maravillas.forEach(element => {
@@ -434,6 +349,7 @@
           botonWeb.addEventListener("click", function () {
             const text = document.querySelector("#text-" + targetIdx);
             text.setAttribute("value", element.link_web);
+            window.open(element.link_web, "_blank");
           });
           botonWeb.setAttribute(
             "animation",
@@ -468,6 +384,7 @@
           botonMapa.addEventListener("click", function () {
             const text = document.querySelector("#text-" + targetIdx);
             text.setAttribute("value", element.link_mapa);
+            window.open(element.link_mapa, "_blank");
           });
           botonMapa.setAttribute(
             "animation",
