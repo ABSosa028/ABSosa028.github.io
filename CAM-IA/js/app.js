@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import * as THREE from 'three';
 import { MindARThree } from 'mindar-face-three';
 
@@ -113,34 +114,78 @@ const start = async () => {
             if (faceMesh.position.x > 0.5 || faceMesh.position.x < -0.5) {
                 direction *= -1;
             }
+=======
+document.addEventListener('DOMContentLoaded', function() {
+    // Detectar si el dispositivo es móvil para optimizar la experiencia AR
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    // Ajustar elementos de la UI según el dispositivo
+    if (isMobile) {
+        // No hacer nada especial por ahora, la página ya es responsive
+    } else {
+        // Añadir un mensaje para dispositivos de escritorio
+        const arButton = document.querySelector('.btn-primary');
+        if (arButton) {
+            const originalHref = arButton.getAttribute('href');
+            
+            arButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Mostrar una sugerencia para una mejor experiencia en móviles
+                const useDesktop = confirm("La experiencia de Realidad Aumentada es mejor en dispositivos móviles. ¿Deseas continuar de todos modos?");
+                
+                if (useDesktop) {
+                    window.location.href = originalHref;
+                }
+            });
+>>>>>>> Stashed changes
         }
-
-        renderer.render(scene, camera);
+    }
+    
+    // Configurar animaciones de entrada para las tarjetas de características
+    const cards = document.querySelectorAll('.feature-cards .card');
+    
+    // Función para verificar si un elemento está visible en la pantalla
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    
+    // Función para animar elementos cuando entran en la pantalla
+    function animateOnScroll() {
+        cards.forEach(card => {
+            if (isElementInViewport(card)) {
+                card.classList.add('animated');
+            }
+        });
+    }
+    
+    // Inicializar al cargar y aplicar en el scrolling
+    animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Opcional: Mejorar el scroll suave para navegación interna
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            
+            if (targetId === '#') return;
+            
+            e.preventDefault();
+            
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
-};
-
-start();
-
-// Captura de imagen
-const captureBtn = document.getElementById("capture-btn");
-
-captureBtn.addEventListener("click", () => {
-    const video = document.querySelector("video");
-    const canvas3D = mindarThree.renderer.domElement;
-
-    const captureCanvas = document.createElement("canvas");
-    const context = captureCanvas.getContext("2d");
-
-    captureCanvas.width = canvas3D.width;
-    captureCanvas.height = canvas3D.height;
-
-    context.drawImage(video, 0, 0, captureCanvas.width, captureCanvas.height);
-    context.drawImage(canvas3D, 0, 0, captureCanvas.width, captureCanvas.height);
-
-    const dataURL = captureCanvas.toDataURL("image/png");
-
-    const link = document.createElement("a");
-    link.href = dataURL;
-    link.download = "captura.png";
-    link.click();
 });

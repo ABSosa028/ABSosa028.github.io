@@ -1,0 +1,42 @@
+{
+  "mind": "completa.mind",
+  "maravillas": [
+    {
+      "id": "maravilla_0",
+      "index": [0, 1, 2],
+      "descripcion_breve": "La Gran Muralla China es una antigua fortificación china, construida y reconstruida entre el siglo V a. C. y el siglo XVI para proteger la frontera norte del Imperio chino durante las sucesivas dinastías imperiales de los ataques de los nómadas xiongnu de Mongolia y Manchuria.",
+      "filtros": "filtro1",
+      "historia_detalles": "Tradicionalmente, la historia de la construcción de la Gran Muralla se divide en cinco partes: Una antes de la unificación de la dinastía Qin (221 a. C.), durante el período de Primaveras y otoños y los Reinos Combatientes. La segunda, a partir de la unificación de la dinastía, se desarrolló en períodos posteriores, completándose en parte durante la dinastía Ming y culminando con su declaración como Patrimonio de la Humanidad por la UNESCO en 1979.",
+      "link_mapa": "Muralla China, Huai Rou Qu, China, 101406",
+      "link_web": "https://www.mutianyugreatwall.com",
+      "nombre": "Ma",
+      "tipo": "guatemala",
+      "user_creacion": "admin",
+      "images": [
+        "./images/maravillas/1. Gran Muralla China/0.jpeg",
+        "./images/maravillas/1. Gran Muralla China/1.jpeg",
+        "./images/maravillas/1. Gran Muralla China/2.jpeg"
+      ],
+      "videos": []
+    },
+    {
+      "id": "maravilla_10",
+      "index": [3, 4, 5],
+      "descripcion_breve": "Descripción del sitio maravilla 10.",
+      "filtros": "filtroX",
+      "historia_detalles": "Detalles históricos del sitio maravilla 10.",
+      "link_mapa": "Dirección del sitio maravilla 10",
+      "link_web": "https://www.ejemplo.com/maravilla10",
+      "nombre": "Maravilla 10",
+      "tipo": "mundo",
+      "user_creacion": "admin",
+      "images": [
+        "./images/maravillas/site10/0.jpeg",
+        "./images/maravillas/site10/1.jpeg"
+      ],
+      "videos": [
+        "./videos/site10/video1.mp4"
+      ]
+    }
+  ]
+}
