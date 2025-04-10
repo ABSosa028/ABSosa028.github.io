@@ -1,0 +1,208 @@
+{
+  "mind": "completa.mind",
+  "maravillas": [
+    {
+      "index": [0, 1, 2],
+      "images": [
+        "./images/maravillas/1. Gran Muralla China/0.jpeg",
+        "./images/maravillas/1. Gran Muralla China/1.jpeg",
+        "./images/maravillas/1. Gran Muralla China/2.jpeg"
+      ],
+      "videos": [
+        "./maravillas/videos/muralla1.mp4",
+        "./maravillas/videos/muralla2.mp4",
+        "./maravillas/videos/muralla3.mp4"
+      ],
+      "filtros": "filtro1",
+      "nombre": "Muralla China",
+      "link_mapa": "Muralla China, Huai Rou Qu, China, 101406",
+      "link_web": "https://www.mutianyugreatwall.com",
+      "descripcion_breve": "La Gran Muralla China es una antigua fortificación china, construida y reconstruida entre el siglo V a. C. y el siglo XVI para proteger la frontera norte del Imperio chino durante las sucesivas dinastías imperiales de los ataques de los nómadas xiongnu de Mongolia y Manchuria.",
+      "historia_detalles": "Tradicionalmente, la historia de la construcción de la Gran Muralla se divide en cinco partes: Una antes de la unificación de la dinastía Qin (221 a. C.), durante el período de Primaveras y otoños y los Reinos Combatientes. La segunda, a partir de la unificación de la dinastía Qin, cuando el emperador Qin Shi Huang inició la construcción de un muro en la frontera norte. Periodo de la dinastía Han Periodo de baja actividad Periodo de la dinastía Ming",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [3,4,5],
+      "images": [
+        "./images/maravillas/2. Chichen Itzá, México/0.jpeg",
+        "./images/maravillas/2. Chichen Itzá, México/1.jpeg",
+        "./images/maravillas/2. Chichen Itzá, México/2.jpeg"
+      ],
+      "videos": [
+        "./videos/chichen_itza1.mp4",
+        "./videos/chichen_itza2.mp4"
+      ],
+      "filtros": "filtro1",
+      "nombre": "Chichén Itzá",
+      "link_mapa": "Chichén Itzá, Yucatán, México",
+      "link_web": "https://www.chichenitza.com/",
+      "descripcion_breve": "Chichén Itzá es un sitio arqueológico maya ubicado en Yucatán, México. Fue una de las principales ciudades mayas y se caracteriza por construcciones como El Castillo o Templo de Kukulcán, el Juego de Pelota y el Observatorio.",
+      "historia_detalles": "Chichén Itzá fue fundada alrededor del año 525 d.C. y se convirtió en uno de los centros políticos, económicos y religiosos más importantes de la civilización maya. La ciudad combina diferentes estilos arquitectónicos, reflejando la mezcla cultural de la época. El legendario El Castillo o Templo de Kukulcán es una pirámide de 30 metros de altura con 365 escalones, uno por cada día del año.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [6,7,8],
+      "images": [
+        "./images/maravillas/3. Coliseo Romano/0.jpeg",
+        "./images/maravillas/3. Coliseo Romano/1.jpeg"
+      ],
+      "videos": [
+        "./videos/coliseo1.mp4"
+      ],
+      "filtros": "filtro1",
+      "nombre": "Coliseo Romano",
+      "link_mapa": "Piazza del Colosseo, 1, 00184 Roma RM, Italia",
+      "link_web": "https://www.colosseum.it/",
+      "descripcion_breve": "El Coliseo Romano es un anfiteatro de la época del Imperio romano, construido en el siglo I. Es una de las obras arquitectónicas más emblemáticas de la antigua Roma y uno de los monumentos más visitados del mundo.",
+      "historia_detalles": "Construido entre los años 70-80 d.C. bajo los emperadores Vespasiano y Tito, el Coliseo (o Anfiteatro Flavio) tenía capacidad para unos 50,000 espectadores que asistían a espectáculos como luchas de gladiadores, batallas navales (naumaquias), recreaciones de batallas famosas, ejecuciones de criminales y caza de animales exóticos.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [9,10,11],
+      "images": [
+        "./images/maravillas/4. Machu Picchu, Perú/0.jpeg",
+        "./images/maravillas/4. Machu Picchu, Perú/1.jpeg"
+      ],
+      "videos": [
+        "./videos/machu_picchu1.mp4"
+      ],
+      "filtros": "filtro1",
+      "nombre": "Machu Picchu",
+      "link_mapa": "Machu Picchu, Perú",
+      "link_web": "https://www.machupicchu.gob.pe/",
+      "descripcion_breve": "Machu Picchu es una antigua ciudad inca ubicada en la Cordillera Oriental del sur de Perú. Es conocida por sus impresionantes ruinas y la espectacular montaña que se eleva detrás de ella, Huayna Picchu.",
+      "historia_detalles": "Construida en el siglo XV, Machu Picchu fue abandonada cuando los españoles conquistaron el Imperio Inca. La ciudad permaneció desconocida para el mundo exterior hasta 1911, cuando el historiador estadounidense Hiram Bingham la dio a conocer. Desde entonces, se ha convertido en uno de los destinos turísticos más famosos de Sudamérica.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [12,13,14],
+      "images": [
+        "./images/maravillas/5. Taj Mahal, India/0.jpeg",
+        "./images/maravillas/5. Taj Mahal, India/1.jpeg"
+      ],
+      "videos": [
+        "./videos/taj_mahal1.mp4"
+      ],
+      "filtros": "filtro1",
+      "nombre": "Taj Mahal",
+      "link_mapa": "Taj Mahal, Agra, Uttar Pradesh, India",
+      "link_web": "https://www.tajmahal.gov.in/",
+      "descripcion_breve": "El Taj Mahal es un mausoleo de mármol blanco ubicado en Agra, India. Fue construido por el emperador Shah Jahan en memoria de su esposa Mumtaz Mahal, y es un ejemplo impresionante de la arquitectura mogol.",
+      "historia_detalles": "Construido entre 1632 y 1653, el Taj Mahal es considerado la mayor obra arquitectónica de la cultura indo-islámica. La construcción empleó a más de 20,000 artesanos bajo la dirección de un consejo de arquitectos liderado por Ustad Ahmad Lahauri. El complejo está rodeado por jardines que siguen el diseño chahar bagh (jardín dividido en cuatro partes).",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [15, 16, 17],
+      "images": [
+        "./images/maravillas/6. Cristo Redentor, Brasil/0.jpeg",
+        "./images/maravillas/6. Cristo Redentor, Brasil/1.jpeg"
+      ],
+      "videos": [
+        "./videos/cristo_redentor1.mp4"
+      ],
+      "filtros": "filtro1",
+      "nombre": "Cristo Redentor",
+      "link_mapa": "Parque Nacional da Tijuca - Alto da Boa Vista, Río de Janeiro - RJ, Brasil",
+      "link_web": "https://www.cristoredentoroficial.com.br/",
+      "descripcion_breve": "El Cristo Redentor es una estatua de Jesús de Nazaret con los brazos abiertos que se encuentra en la ciudad de Río de Janeiro, Brasil. Es una de las estatuas más famosas del mundo y se ha convertido en un símbolo cultural de Brasil.",
+      "historia_detalles": "La estatua tiene 30 metros de altura, sin considerar su base de 8 metros, y fue inaugurada el 12 de octubre de 1931 después de aproximadamente cinco años de construcción. Está ubicada en la cima del cerro del Corcovado a 710 metros sobre el nivel del mar, desde donde ofrece una vista panorámica de la ciudad de Río de Janeiro.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [18, 19, 20],
+      "images": [
+        "./images/maravillas/7. Petra, Jordania/0.jpeg",
+        "./images/maravillas/7. Petra, Jordania/1.jpeg"
+      ],
+      "videos": [
+        "./videos/petra1.mp4"
+      ],
+      "filtros": "filtro1",
+      "nombre": "Petra",
+      "link_mapa": "Petra, Jordania",
+      "link_web": "http://www.visitpetra.jo/",
+      "descripcion_breve": "Petra es una antigua ciudad nabatea ubicada en el suroeste de Jordania. Es famosa por su arquitectura tallada en la roca y su sistema de conductos de agua.",
+      "historia_detalles": "Fundada alrededor del siglo VI a.C., Petra fue la capital del Reino Nabateo y un importante centro de comercio en la ruta de las especias. La ciudad fue tallada directamente en la piedra arenisca rosada, creando impresionantes estructuras como Al-Khazneh (El Tesoro). Permaneció oculta para el mundo occidental hasta 1812, cuando fue redescubierta por el explorador suizo Johann Ludwig Burckhardt.",
+      "tipo": "mundo",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [21, 22, 23],
+      "images": [
+        "./images/maravillas/guatemala/1. Tikal/0.jpeg",
+        "./images/maravillas/guatemala/1. Tikal/1.jpeg"
+      ],
+      "videos": [
+        "./videos/tikal1.mp4"
+      ],
+      "filtros": "filtro2",
+      "nombre": "Tikal",
+      "link_mapa": "Tikal, Guatemala",
+      "link_web": "https://www.visitguatemala.com/tikal/",
+      "descripcion_breve": "Tikal es uno de los mayores yacimientos arqueológicos de la civilización maya precolombina, ubicado en el departamento de Petén, Guatemala.",
+      "historia_detalles": "Tikal fue una de las ciudades más importantes del periodo Clásico de la civilización maya, entre los años 200 y 900 d.C. El sitio ocupa un área de más de 16 kilómetros cuadrados y contiene más de 3,000 estructuras. Entre sus edificaciones más notables se encuentran el Templo del Gran Jaguar (Templo I) y el Templo de las Máscaras (Templo II).",
+      "tipo": "guatemala",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [24, 25, 26],
+      "images": [
+        "./images/maravillas/guatemala/2. Lago de Atitlán/0.jpeg",
+        "./images/maravillas/guatemala/2. Lago de Atitlán/1.jpeg"
+      ],
+      "videos": [
+        "./videos/atitlan1.mp4"
+      ],
+      "filtros": "filtro2",
+      "nombre": "Lago de Atitlán",
+      "link_mapa": "Lago de Atitlán, Sololá, Guatemala",
+      "link_web": "https://www.visitguatemala.com/atitlan/",
+      "descripcion_breve": "El Lago de Atitlán es un lago de origen volcánico situado en el departamento de Sololá, Guatemala. Está rodeado por tres volcanes y varios pueblos mayas.",
+      "historia_detalles": "El Lago de Atitlán se formó hace aproximadamente 84,000 años tras una erupción volcánica. Está rodeado por los volcanes Atitlán, Tolimán y San Pedro. En sus orillas se encuentran diversos pueblos indígenas que conservan sus tradiciones, lenguas y vestimenta tradicional. El escritor Aldous Huxley lo describió como 'el lago más bello del mundo'.",
+      "tipo": "guatemala",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [27, 28, 29],
+      "images": [
+        "./images/maravillas/guatemala/3. Antigua Guatemala/0.jpeg",
+        "./images/maravillas/guatemala/3. Antigua Guatemala/1.jpeg"
+      ],
+      "videos": [
+        "./videos/antigua1.mp4"
+      ],
+      "filtros": "filtro2",
+      "nombre": "Antigua Guatemala",
+      "link_mapa": "Antigua Guatemala, Sacatepéquez, Guatemala",
+      "link_web": "https://www.visitguatemala.com/antigua/",
+      "descripcion_breve": "Antigua Guatemala es una ciudad colonial ubicada en el departamento de Sacatepéquez. Es famosa por su arquitectura barroca española y sus ruinas de iglesias y conventos.",
+      "historia_detalles": "Fundada en 1543 como la tercera capital de Guatemala, Antigua fue durante más de 200 años el centro político, religioso y económico del Reino de Guatemala. La ciudad fue destruida parcialmente por terremotos en 1773, lo que llevó al traslado de la capital a lo que hoy es Ciudad de Guatemala. Gracias a esto, Antigua conserva su arquitectura colonial y fue declarada Patrimonio de la Humanidad por la UNESCO en 1979.",
+      "tipo": "guatemala",
+      "user_creacion": "admin"
+    },
+    {
+      "index": [30, 31, 32],
+      "images": [
+        "./images/maravillas/other/1. USAC/0.jpeg",
+        "./images/maravillas/other/1. USAC/1.jpeg"
+      ],
+      "videos": [
+        "./videos/usac1.mp4"
+      ],
+      "filtros": "filtro3",
+      "nombre": "Universidad de San Carlos de Guatemala",
+      "link_mapa": "Ciudad Universitaria, Guatemala",
+      "link_web": "https://www.usac.edu.gt/",
+      "descripcion_breve": "La Universidad de San Carlos de Guatemala (USAC) es la universidad más grande y antigua de Guatemala, siendo además la única universidad estatal del país.",
+      "historia_detalles": "Fundada el 31 de enero de 1676 por Real Cédula de Carlos II, la USAC es una de las universidades más antiguas de América. Durante la época colonial se llamó Real y Pontificia Universidad de San Carlos Borromeo. Actualmente cuenta con centros universitarios en casi todos los departamentos de Guatemala y es considerada la cuarta universidad fundada en América.",
+      "tipo": "other",
+      "user_creacion": "admin"
+    }
+  ]
+}

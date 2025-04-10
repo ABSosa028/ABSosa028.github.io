@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Panel de Administración - TurisAR</title>
+	<style>
+		body { font-family: Arial, sans-serif; margin: 20px; }
+	</style>
+</head>
+<body>
+	<h1>Administración de Puntos de Interés</h1>
+	<!-- Formulario para gestión de puntos -->
+	<form id="poi-form">
+		Nombre del Lugar:<br>
+		<input type="text" name="name"><br>
+		Descripción:<br>
+		<textarea name="description"></textarea><br>
+		URL del sitio web:<br>
+		<input type="url" name="website"><br>
+		Ubicación en mapa (URL):<br>
+		<input type="url" name="map"><br>
+		Contenido multimedia (URL):<br>
+		<input type="url" name="media"><br>
+		<button type="submit">Guardar</button>
+	</form>
+	<script>
+		document.getElementById("poi-form").addEventListener("submit", function(e) {
+			e.preventDefault();
+			const name = e.target.name.value;
+			const description = e.target.description.value;
+			const website = e.target.website.value;
+			const map = e.target.map.value;
+			const media = e.target.media.value;
+
+			// Obtener lista de POIs existente o inicializarla
+			let pois = JSON.parse(localStorage.getItem("pois") || "[]");
+
+			// Agregar nuevo POI
+			pois.push({ name, description, website, map, media });
+
+			// Guardar en localStorage
+			localStorage.setItem("pois", JSON.stringify(pois));
+
+			alert("Sitio agregado. Los cambios se reflejarán en ar-view.html");
+		});
+
+		fetch('data/maravillas.json')
+			.then(res => res.json())
+			.then(data => {
+				console.log("JSON cargado:", data);
+				localStorage.setItem("mind", data.mind);
+				localStorage.setItem("maravillas", JSON.stringify(data.maravillas));
+			})
+			
+			.catch(err => console.error(err));
+
+		function convertFromExternalFormat(jsonString) {
+			try {
+				return JSON.parse(jsonString);
+			} catch (e) {
+				console.error("Error al convertir JSON:", e);
+				return null;
+			}
+		}
+	</script>
+	<script src="js/json-adapter.js"></script>
+	<script src="js/admin.js"></script>
+</body>
+</html>

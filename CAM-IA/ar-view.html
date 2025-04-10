@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:CAM-IA/ar-view.html
+=======
+>>>>>>> Stashed changes
 
 <html>
   <head>
@@ -38,7 +42,99 @@
     </a-scene>
 
     <script>
+<<<<<<< Updated upstream
       
+=======
+           function loadMaravillasData() {
+        try {
+
+          const originalJSON = localStorage.getItem('originalMaravillasJSON');
+          if (originalJSON) {
+            const parsedData = JSON.parse(originalJSON);
+            if (parsedData.maravillas && Array.isArray(parsedData.maravillas)) {
+              console.log('Cargando datos desde originalMaravillasJSON');
+              return parsedData;
+            }
+          }
+          const siteDB = localStorage.getItem('siteDB');
+          if (siteDB) {
+            const sites = JSON.parse(siteDB);
+            let maravillas = Object.entries(sites).map(([id, site]) => {
+              return {
+                index: site.index || [],
+                images: site.images || [],
+                videos: site.videos || [],
+                filtros: site.filtros || "filtro1",
+                nombre: site.nombre || id,
+                link_mapa: site.link_mapa || "",
+                link_web: site.link_web || "",
+                descripcion_breve: site.descripcion_breve || "",
+                historia_detalles: site.historia_detalles || "",
+                tipo: site.tipo || "mundo",
+                user_creacion: site.user_creacion || "admin"
+              };
+            });
+            if (maravillas.length > 0) {
+              return { mind: "completa.mind", maravillas };
+            }
+          }
+          
+          // 3. Verificar si existe turisarSites (formato alternativo admin)
+          const turisarSites = localStorage.getItem('turisarSites');
+          if (turisarSites) {
+            const sites = JSON.parse(turisarSites);
+            maravillas = sites.map((site, index) => {
+              const baseIndex = index * 10;
+              const indices = [];
+              for (let i = 0; i < 10; i++) {
+                indices.push(baseIndex + i);
+              }
+              
+              return {
+                index: indices,
+                images: site.images || [],
+                videos: [],
+                filtros: site.filterType || "filtro1",
+                nombre: site.name || site.id,
+                link_mapa: site.mapLink || "",
+                link_web: site.webLink || "",
+                descripcion_breve: site.description || "",
+                historia_detalles: site.history || "",
+                tipo: site.type || "mundo",
+                user_creacion: "admin"
+              };
+            });
+            
+            if (maravillas.length > 0) {
+              console.log('Cargando datos desde turisarSites:', maravillas.length, 'sitios encontrados');
+              return {
+                mind: "completa.mind",
+                maravillas: maravillas
+              };
+            }
+          }
+          
+          // Si no se encontró ninguna fuente de datos, mostrar mensaje y retornar estructura básica
+          console.log('No se encontraron datos en localStorage');
+          showNoDataMessage();
+          
+          // Retornar un objeto vacío pero con la estructura correcta
+          return {
+            mind: "completa.mind",
+            maravillas: []
+          };
+          
+        } catch (error) {
+          console.error('Error al cargar datos desde localStorage:', error);
+          showNoDataMessage();
+          return {
+            mind: "completa.mind",
+            maravillas: []
+          };
+        }
+      }
+
+>>>>>>> Stashed changes
       const jsonData = {
         mind: "mero.mind",
         maravillas: [
@@ -105,7 +201,11 @@
         ],
       };
 
+<<<<<<< Updated upstream
       const data = jsonData;
+=======
+      const data = originalJSON;
+>>>>>>> Stashed changes
       const scene = document.querySelector("a-scene");
 
       let todosAssetsImg = [];
@@ -383,4 +483,75 @@
       });
     </script>
   </body>
+<<<<<<< Updated upstream
+========
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurisAR - Explora el mundo con Realidad Aumentada</title>
+    <link rel="stylesheet" href="css/styles2.css">
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TurisAR</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="maravillas.html">Maravillas</a></li>
+                <li><a href="login.html" class="login-btn">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Descubre las maravillas del mundo con Realidad Aumentada</h1>
+                <p>Apunta tu cámara a los iconos reconocidos y sumérgete en una experiencia interactiva única</p>
+                <a href="ar-view.html" class="btn-primary">Iniciar Experiencia AR</a>
+            </div>
+        </section>
+        
+        <section class="features">
+            <h2>Características de TurisAR</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <div class="icon">🌍</div>
+                    <h3>Maravillas del Mundo</h3>
+                    <p>Explora las 7 maravillas del mundo con información detallada y contenido multimedia.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🏞️</div>
+                    <h3>Maravillas de Guatemala</h3>
+                    <p>Descubre los tesoros culturales y naturales de Guatemala en realidad aumentada.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">📸</div>
+                    <h3>Filtros Temáticos</h3>
+                    <p>Toma fotos divertidas con filtros inspirados en cada maravilla turística.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 TurisAR - Proyecto de Inteligencia Artificial 1 - USAC</p>
+            <div class="debug-links">
+                <a href="test-face-filter.html" style="font-size: 12px; margin-left: 20px; color: #ccc;">Diagnóstico Filtros</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+</body>
+>>>>>>>> Stashed changes:CAM-IA/index.html
+=======
+>>>>>>> Stashed changes
 </html>

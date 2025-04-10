@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurisAR - Panel de Administración</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>TurisAR Admin</h1>
+                </div>
+                <div class="user-info">
+                    <span id="user-name">Admin</span>
+                </div>
+            </div>
+        </header>
+        
+        <main class="admin-content">
+            <div class="content-layout">
+                <div class="vertical-nav">
+                    <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+                    <button class="nav-btn" data-section="sites">Sitios Turísticos</button>
+                    <button class="nav-btn" data-section="markers">Marcadores AR</button>
+                    <button class="nav-btn" data-section="filters">Filtros Faciales</button>
+                    <button class="nav-btn" data-section="config">Configuración</button>
+                    <button class="nav-btn" id="logout-btn">Cerrar Sesión</button>
+                </div>
+                
+                <div class="content-area">
+                    <h2 id="section-title">Dashboard</h2>
+                    
+                    <!-- Sección Dashboard -->
+                    <section id="dashboard-section" class="content-section active">
+                        <div class="dashboard-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon">🌍</div>
+                                <div class="stat-info">
+                                    <h3>Sitios Totales</h3>
+                                    <p id="total-sites">14</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🖼️</div>
+                                <div class="stat-info">
+                                    <h3>Marcadores AR</h3>
+                                    <p id="total-markers">14</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">😄</div>
+                                <div class="stat-info">
+                                    <h3>Filtros Faciales</h3>
+                                    <p id="total-filters">8</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-actions">
+                            <h3>Acciones rápidas</h3>
+                            <div class="action-buttons">
+                                <button class="action-btn" data-section="sites" data-action="add">Agregar nuevo sitio</button>
+                                <button class="action-btn" data-section="markers" data-action="add">Crear nuevo marcador</button>
+                                <button class="action-btn" data-section="filters" data-action="add">Añadir nuevo filtro</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Sección Sitios -->
+                    <section id="sites-section" class="content-section">
+                        <div class="section-header">
+                            <h2>Gestión de Sitios Turísticos</h2>
+                            <button id="add-site-btn" class="add-btn">+ Nuevo Sitio</button>
+                        </div>
+                        
+                        <div class="search-box">
+                            <input type="text" id="site-search" placeholder="Buscar sitio...">
+                        </div>
+                        
+                        <div class="data-table">
+                            <table id="sites-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>País</th>
+                                        <th>Tipo</th>
+                                        <th>Marcador</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sites-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    
+                    <!-- Sección Marcadores -->
+                    <section id="markers-section" class="content-section">
+                        <div class="section-header">
+                            <h2>Gestión de Marcadores AR</h2>
+                            <button id="add-marker-btn" class="add-btn">+ Nuevo Marcador</button>
+                        </div>
+                        
+                        <div class="markers-grid" id="markers-grid">
+                            <!-- Marcadores generados dinámicamente -->
+                        </div>
+                    </section>
+                    
+                    <!-- Sección Filtros -->
+                    <section id="filters-section" class="content-section">
+                        <div class="section-header">
+                            <h2>Gestión de Filtros Faciales</h2>
+                            <button id="add-filter-btn" class="add-btn">+ Nuevo Filtro</button>
+                        </div>
+                        
+                        <div class="filters-grid" id="filters-grid">
+                            <!-- Filtros generados dinámicamente -->
+                        </div>
+                    </section>
+                    
+                    <!-- Nueva sección de Configuración -->
+                    <section id="config-section" class="content-section">
+                        <div class="section-header">
+                            <h2>Gestión de Configuración</h2>
+                        </div>
+                        
+                        <div class="config-options">
+                            <div class="config-card">
+                                <h3>Exportar Configuración</h3>
+                                <p>Descarga toda la configuración del sistema (sitios, marcadores y filtros) en formato JSON.</p>
+                                <button id="export-config-btn" class="action-btn">Exportar JSON</button>
+                            </div>
+                            
+                            <div class="config-card">
+                                <h3>Importar Configuración</h3>
+                                <p>Carga una configuración desde un archivo JSON.</p>
+                                <div class="file-input-container">
+                                    <input type="file" id="import-json-file" accept=".json">
+                                    <label for="import-json-file" class="file-input-label">Seleccionar archivo JSON</label>
+                                </div>
+                                <button id="import-config-btn" class="action-btn" disabled>Importar JSON</button>
+                            </div>
+                        </div>
+                        
+                        <div class="json-editor-container">
+                            <h3>Editor JSON</h3>
+                            <p>Edite o pegue directamente el JSON de configuración:</p>
+                            <textarea id="json-editor" class="json-editor" placeholder="Pegue aquí su configuración en formato JSON..."></textarea>
+                            <div class="editor-actions">
+                                <button id="apply-json-btn" class="submit-btn">Aplicar Cambios</button>
+                                <button id="format-json-btn" class="cancel-btn">Formatear JSON</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modales para agregar/editar contenido -->
+    <div id="site-modal" class="admin-modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="site-modal-title">Agregar Nuevo Sitio</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <form id="site-form">
+                <div class="form-group">
+                    <label for="site-id">ID (para uso en el sistema)</label>
+                    <input type="text" id="site-id" name="site-id" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-name">Nombre del Sitio</label>
+                    <input type="text" id="site-name" name="site-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-country">País</label>
+                    <input type="text" id="site-country" name="site-country" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-type">Tipo</label>
+                    <select id="site-type" name="site-type">
+                        <option value="world">Maravilla del Mundo</option>
+                        <option value="guatemala">Maravilla de Guatemala</option>
+                        <option value="other">Otro Sitio Turístico</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-description">Descripción Corta</label>
+                    <textarea id="site-description" name="site-description" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-history">Historia y Detalles</label>
+                    <textarea id="site-history" name="site-history" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-map">Enlace a Mapa</label>
+                    <input type="url" id="site-map" name="site-map" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-web">Enlace a Sitio Web</label>
+                    <input type="url" id="site-web" name="site-web" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-marker">Seleccionar Marcador AR</label>
+                    <select id="site-marker" name="site-marker" required>
+                        <!-- Opciones generadas dinámicamente -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-filter">Seleccionar Filtro Facial</label>
+                    <select id="site-filter" name="site-filter" required>
+                        <!-- Opciones generadas dinámicamente -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Imágenes del Sitio (máximo 4)</label>
+                    <div class="image-upload-container">
+                        <div class="image-upload">
+                            <input type="file" id="site-image-1" name="site-image-1" accept="image/*">
+                            <label for="site-image-1">+ Imagen 1</label>
+                            <div class="image-preview" id="preview-1"></div>
+                        </div>
+                        
+                        <div class="image-upload">
+                            <input type="file" id="site-image-2" name="site-image-2" accept="image/*">
+                            <label for="site-image-2">+ Imagen 2</label>
+                            <div class="image-preview" id="preview-2"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Guardar</button>
+                    <button type="button" class="cancel-btn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../js/admin.js"></script>
+</body>
+</html>
