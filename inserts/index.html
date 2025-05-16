@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cargar Archivos JSON</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .file-list {
+            margin-top: 20px;
+        }
+
+        .file-item {
+            margin-bottom: 8px;
+        }
+
+        .file-type-select {
+            margin-left: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .list-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .drop-zone {
+            border: 2px dashed #888;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            color: #888;
+            margin-bottom: 15px;
+            transition: background 0.2s;
+        }
+
+        .drop-zone.dragover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Generar Inserts</h2>
+        <div id="keyValueContainer">
+            <div class="input-group">
+                <label>Declaracion:</label>
+                <input type="text" class="key-input" placeholder="Duca">
+                <label style="margin-left:10px;">Version Nube:</label>
+                <input type="text" class="value-input" placeholder="Version Nube">
+                <button type="button" class="remove-kv-btn" style="margin-left:10px; display:none;">Eliminar</button>
+            </div>
+        </div>
+
+
+        <div class="input-group">
+            <button type="button" id="addBulkBtn">Agregar masivo</button>
+        </div>
+        <div class="input-group" style="display:none;" id="bulkInputGroup">
+            <label>Entradas masivas:</label>
+            <textarea id="bulkTextarea" rows="5" style="width:100%;"
+                placeholder="declaracion1 versionNube1&#10;declaracion2 versionNube2"></textarea>
+            <button type="button" id="bulkAddConfirmBtn" style="margin-top:10px;">Agregar Masivo</button>
+            <button type="button" id="bulkAddCancelBtn" style="margin-top:10px;">Cancelar Masivo</button>
+            <button type="button" id="bulkAddCleanBtn" style="margin-top:10px;">Limpiar Masivo</button>
+        </div>
+        <script>
+            const addBulkBtn = document.getElementById('addBulkBtn');
+            const bulkInputGroup = document.getElementById('bulkInputGroup');
+            const bulkTextarea = document.getElementById('bulkTextarea');
+            const bulkAddConfirmBtn = document.getElementById('bulkAddConfirmBtn');
+            const bulkAddCancelBtn = document.getElementById('bulkAddCancelBtn');
+            const bulkAddCleanBtn = document.getElementById('bulkAddCancelBtn');
+
+            addBulkBtn.onclick = function () {
+                bulkInputGroup.style.display = '';
+                addBulkBtn.style.display = 'none';
+            };
+
+            bulkAddConfirmBtn.onclick = function () {
+                keyValueContainer.querySelectorAll('.input-group').forEach(group => {
+                    const key = group.querySelector('.key-input').value.trim();
+                    const value = group.querySelector('.value-input').value.trim();
+                    if (!key && !value) {
+                        keyValueContainer.removeChild(group);
+                    }
+                });
+
+                const lines = bulkTextarea.value.split('\n');
+                lines.forEach(line => {
+                    const parts = line.trim().split(/[\t ]+/);
+                    if (parts.length >= 2) {
+                        const key = parts[0].trim();
+                        const value = parts.slice(1).join(' ').trim();
+                        if (key) addKeyValueRow(key, value);
+                    }
+                });
+                bulkInputGroup.style.display = 'none';
+                addBulkBtn.style.display = '';
+                bulkTextarea.value = '';
+            };
+
+
+            bulkAddCancelBtn.onclick = function () {
+                bulkInputGroup.style.display = 'none';
+                addBulkBtn.style.display = '';
+                bulkTextarea.value = '';
+            };
+
+            bulkAddCleanBtn.onclick = function () {
+                bulkTextarea.value = '';
+            };
+
+
+        </script>
+        <button type="button" id="addKeyValueBtn" style="margin-bottom:15px;">Agregar otro</button>
+        <script>
+            const keyValueContainer = document.getElementById('keyValueContainer');
+            const addKeyValueBtn = document.getElementById('addKeyValueBtn');
+
+            function addKeyValueRow(key = '', value = '') {
+                const group = document.createElement('div');
+                group.className = 'input-group';
+                group.innerHTML = `
+                    <label>Clave:</label>
+                    <input type="text" class="key-input" placeholder="Clave" value="${key}">
+                    <label style="margin-left:10px;">Valor:</label>
+                    <input type="text" class="value-input" placeholder="Valor" value="${value}">
+                    <button type="button" class="remove-kv-btn" style="margin-left:10px;">Eliminar</button>
+                `;
+                group.querySelector('.remove-kv-btn').onclick = function () {
+                    keyValueContainer.removeChild(group);
+                    updateRemoveButtons();
+                };
+                keyValueContainer.appendChild(group);
+                updateRemoveButtons();
+            }
+
+            function updateRemoveButtons() {
+                const groups = keyValueContainer.querySelectorAll('.input-group');
+                groups.forEach((group, idx) => {
+                    const btn = group.querySelector('.remove-kv-btn');
+                    btn.style.display = '';
+                });
+            }
+
+            addKeyValueBtn.onclick = function () {
+                addKeyValueRow();
+            };
+
+            function getKeyValueData() {
+                const data = {};
+                keyValueContainer.querySelectorAll('.input-group').forEach(group => {
+                    const key = group.querySelector('.key-input').value.trim();
+                    const value = group.querySelector('.value-input').value.trim();
+                    if (key) data[key] = value;
+                });
+                return data;
+            }
+        </script>
+        <div id="dropZone" class="drop-zone">
+            Arrastra y suelta aquí tus archivos JSON o haz clic para seleccionarlos
+            <input type="file" id="jsonFiles" accept=".json" multiple style="display:none;">
+        </div>
+        <div class="file-list">
+            <div class="list-title">Líneas</div>
+            <div id="lineasList"></div>
+            <div class="list-title">Docs Transporte</div>
+            <div id="docsList"></div>
+        </div>
+    </div>
+    <script>
+        const input = document.getElementById('jsonFiles');
+        const dropZone = document.getElementById('dropZone');
+        const lineasList = document.getElementById('lineasList');
+        const docsList = document.getElementById('docsList');
+
+        let filesData = [];
+        function renderLists() {
+            lineasList.innerHTML = '';
+            docsList.innerHTML = '';
+            filesData.forEach((fileObj, idx) => {
+                const { file, valid, type } = fileObj;
+                const fileId = `file-type-${idx}`;
+                const itemHTML = `
+            <div class="file-item" data-idx="${idx}" style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    ${valid ? '✅' : '<span style="color:red;">❌</span>'}
+                    ${file.name} (${valid ? 'válido' : 'JSON inválido'})
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <select class="file-type-select" id="${fileId}">
+                        <option value="lineas" ${type === 'lineas' ? 'selected' : ''}>Líneas</option>
+                        <option value="docs_transporte" ${type === 'docs_transporte' ? 'selected' : ''}>Docs Transporte</option>
+                    </select>
+                    <button class="remove-btn" data-remove-idx="${idx}" style="margin-left:10px;">Eliminar</button>
+                </div>
+            </div>
+        `;
+                if (type === 'lineas') {
+                    lineasList.innerHTML += itemHTML;
+                } else {
+                    docsList.innerHTML += itemHTML;
+                }
+            });
+
+            // Agregar eventos a los selects
+            filesData.forEach((fileObj, idx) => {
+                const select = document.getElementById(`file-type-${idx}`);
+                select.addEventListener('change', function () {
+                    filesData[idx].type = this.value;
+                    renderLists();
+                });
+            });
+
+            // Agregar eventos a los botones de eliminar
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const removeIdx = parseInt(this.getAttribute('data-remove-idx'));
+                    filesData.splice(removeIdx, 1);
+                    renderLists();
+                });
+            });
+        }
+
+
+        function handleFiles(fileList) {
+            filesData = [];
+            let filesArr = Array.from(fileList);
+            let processed = 0;
+            filesArr.forEach((file, idx) => {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    let valid = true;
+                    try {
+                        JSON.parse(e.target.result);
+                    } catch {
+                        valid = false;
+                    }
+                    filesData.push({
+                        file,
+                        valid,
+                        type: 'lineas' // valor por defecto
+                    });
+                    processed++;
+                    if (processed === filesArr.length) {
+                        renderLists();
+                    }
+                };
+                reader.readAsText(file);
+            });
+        }
+
+        input.addEventListener('change', function () {
+            handleFiles(input.files);
+        });
+
+        dropZone.addEventListener('click', () => input.click());
+
+        dropZone.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', function (e) {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', function (e) {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length) {
+                handleFiles(e.dataTransfer.files);
+            }
+        });
+    </script>
+    <button type="button" id="procesarBtn" style="margin-top: 20px;">Procesar Archivos</button>
+    <script>
+        document.getElementById('procesarBtn').addEventListener('click', procesarArchivos);
+        function procesarArchivos() {
+            console.log("Procesando archivos...");
+            if (filesData.length === 0) {
+                alert("No hay archivos cargados para procesar.");
+                return;
+            }
+
+            procesarArchivos();
+
+        }
+        // Variables globales para acumular los resultados
+        let allInsertsSQL = [];
+        let allErrores = [];
+
+        function generarInsertsLineas() {
+            // Obtener los datos de declaraciones
+            const declaraciones = getKeyValueData();
+
+            // Filtrar solo archivos de líneas válidos
+            const archivosLineas = filesData.filter(file =>
+                file.valid && file.type === 'lineas'
+            );
+
+            if (archivosLineas.length === 0) {
+                alert("No hay archivos de líneas válidos para procesar.");
+                return;
+            }
+
+            // Limpiar resultados previos si es una nueva ejecución
+            if (allInsertsSQL.length === 0) {
+                allInsertsSQL = [];
+                allErrores = [];
+            }
+
+            archivosLineas.forEach(fileObj => {
+                console.log(`Procesando archivo ${fileObj.file.name}...`);
+                try {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        try {
+                            const jsonData = JSON.parse(e.target.result);
+
+                            if (!jsonData.results || !jsonData.results[0] || !jsonData.results[0].items) {
+                                allErrores.push(`Archivo ${fileObj.file.name}: Estructura JSON inválida - falta results.items`);
+                                return;
+                            }
+
+                            const items = jsonData.results[0].items;
+
+                            items.forEach(item => {
+                                const duca = item.duca || '';
+                                const declaracion = Object.entries(declaraciones).find(
+                                    ([key, value]) => key.toLowerCase() === duca.toLowerCase()
+                                );
+
+                                if (!declaracion) {
+                                    allErrores.push(`DUCA ${duca} no encontrado en declaraciones registradas`);
+                                    return;
+                                }
+
+                                const idVersion = declaracion[1];
+
+                                const insertFields = {
+                                    id_version: idVersion,
+                                    no_linea: item.secuenciafraccion || null,
+                                    // ... (resto del mapeo de campos igual que antes)
+                                };
+
+                                if (insertFields.no_linea === null) {
+                                    allErrores.push(`Línea sin secuenciafraccion (DUCA: ${duca})`);
+                                    return;
+                                }
+
+                                const columns = Object.keys(insertFields).join(', ');
+                                const values = Object.values(insertFields).map(v => {
+                                    if (v === null) return 'NULL';
+                                    if (typeof v === 'string') return `'${v.replace(/'/g, "''")}'`;
+                                    return v;
+                                }).join(', ');
+
+                                allInsertsSQL.push(`-- Línea de DUCA: ${duca}\nINSERT INTO sat_aduanas_miad_despacho.ad_linea_declaracion (${columns}) VALUES (${values});`);
+                            });
+
+                        } catch (error) {
+                            console.error(`Error al procesar archivo ${fileObj.file.name}:`, error);
+                            allErrores.push(`Error procesando ${fileObj.file.name}: ${error.message}`);
+                        }
+                    };
+
+                    reader.onerror = function () {
+                        allErrores.push(`Error al leer el archivo ${fileObj.file.name}`);
+                    };
+
+                    reader.readAsText(fileObj.file);
+
+                } catch (error) {
+                    allErrores.push(`Error procesando ${fileObj.file.name}: ${error.message}`);
+                }
+            });
+        }
+
+        function generarInsertsDocumentosTransporte() {
+            const declaraciones = getKeyValueData();
+            const archivosDocs = filesData.filter(file =>
+                file.valid && file.type === 'docs_transporte'
+            );
+
+            if (archivosDocs.length === 0) {
+                alert("No hay archivos de documentos de transporte válidos para procesar.");
+                return;
+            }
+
+            archivosDocs.forEach(fileObj => {
+                console.log(`Procesando archivo ${fileObj.file.name}...`);
+                try {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        try {
+                            const jsonData = JSON.parse(e.target.result);
+
+                            if (!jsonData.results || !jsonData.results[0] || !jsonData.results[0].items) {
+                                allErrores.push(`Archivo ${fileObj.file.name}: Estructura JSON inválida - falta results.items`);
+                                return;
+                            }
+
+                            const items = jsonData.results[0].items;
+
+                            items.forEach(item => {
+                                const duca = item.duca || '';
+                                const declaracion = Object.entries(declaraciones).find(
+                                    ([key, value]) => key.toLowerCase() === duca.toLowerCase()
+                                );
+
+                                if (!declaracion) {
+                                    allErrores.push(`DUCA ${duca} no encontrado en declaraciones registradas`);
+                                    return;
+                                }
+
+                                const idVersion = declaracion[1];
+
+                                const insertFields = {
+                                    id_version: idVersion,
+                                    // ... (resto del mapeo de campos igual que antes)
+                                };
+
+                                if (!insertFields.no_doc) {
+                                    allErrores.push(`Documento de transporte sin número (DUCA: ${duca})`);
+                                    return;
+                                }
+
+                                const columns = Object.keys(insertFields).join(', ');
+                                const values = Object.values(insertFields).map(v => {
+                                    if (v === null) return 'NULL';
+                                    if (typeof v === 'boolean') return v ? 'true' : 'false';
+                                    if (typeof v === 'string') return `'${v.replace(/'/g, "''")}'`;
+                                    return v;
+                                }).join(', ');
+
+                                allInsertsSQL.push(`-- Documento de transporte de DUCA: ${duca}\nINSERT INTO sat_aduanas_miad_despacho.ad_doc_transporte_declaracion (${columns}) VALUES (${values});`);
+                            });
+
+                        } catch (error) {
+                            console.error(`Error al procesar archivo ${fileObj.file.name}:`, error);
+                            allErrores.push(`Error procesando ${fileObj.file.name}: ${error.message}`);
+                        }
+                    };
+
+                    reader.onerror = function () {
+                        allErrores.push(`Error al leer el archivo ${fileObj.file.name}`);
+                    };
+
+                    reader.readAsText(fileObj.file);
+
+                } catch (error) {
+                    allErrores.push(`Error procesando ${fileObj.file.name}: ${error.message}`);
+                }
+            });
+        }
+
+        function generarArchivoFinal() {
+            if (allInsertsSQL.length === 0 && allErrores.length === 0) {
+                alert("No hay datos procesados para generar el archivo final.");
+                return;
+            }
+
+            let contenidoArchivo = '';
+
+            // Agregar encabezado
+            contenidoArchivo += `-- Script SQL generado automáticamente\n`;
+            contenidoArchivo += `-- Fecha: ${new Date().toISOString()}\n\n`;
+
+            // Agregar INSERTs
+            contenidoArchivo += allInsertsSQL.join('\n\n');
+
+            // Agregar errores si los hay
+            if (allErrores.length > 0) {
+                contenidoArchivo += `\n\n-- Errores encontrados (${allErrores.length}):\n`;
+                contenidoArchivo += allErrores.map(e => `-- ${e}`).join('\n');
+                alert(`Se generaron INSERTs pero con ${allErrores.length} errores. Ver archivo final.`);
+            }
+
+            // Crear y descargar archivo
+            const blob = new Blob([contenidoArchivo], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'inserts_finales.sql';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Limpiar para la próxima ejecución
+            allInsertsSQL = [];
+            allErrores = [];
+        }
+
+        // Variables globales para acumular los resultados
+
+
+        function procesarArchivos() {
+            console.log("Procesando archivos...");
+            if (filesData.length === 0) {
+                alert("No hay archivos cargados para procesar.");
+                return;
+            }
+
+            // Limpiar resultados previos
+            allInsertsSQL = [];
+            allErrores = [];
+
+            // Crear array de promesas para todos los archivos
+            const promesas = [];
+
+            // Procesar documentos de transporte
+            const archivosDocs = filesData.filter(file => file.valid && file.type === 'docs_transporte');
+            archivosDocs.forEach(fileObj => {
+                promesas.push(procesarArchivoTransporte(fileObj));
+            });
+
+            // Procesar líneas
+            const archivosLineas = filesData.filter(file => file.valid && file.type === 'lineas');
+            archivosLineas.forEach(fileObj => {
+                promesas.push(procesarArchivoLinea(fileObj));
+            });
+
+            // Esperar a que todas las promesas se completen
+            Promise.all(promesas)
+                .then(() => {
+                    generarArchivoFinal();
+                })
+                .catch(error => {
+                    console.error("Error en el procesamiento:", error);
+                    alert("Ocurrió un error durante el procesamiento.");
+                });
+        }
+
+        function procesarArchivoTransporte(fileObj) {
+            return new Promise((resolve) => {
+                console.log(`Procesando documento transporte: ${fileObj.file.name}`);
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    try {
+                        const jsonData = JSON.parse(e.target.result);
+
+                        if (!jsonData.results || !jsonData.results[0] || !jsonData.results[0].items) {
+                            allErrores.push(`Archivo ${fileObj.file.name}: Estructura JSON inválida`);
+                            resolve();
+                            return;
+                        }
+
+                        const declaraciones = getKeyValueData();
+                        const items = jsonData.results[0].items;
+
+                        items.forEach(item => {
+                            const duca = item.duca || '';
+                            const declaracion = Object.entries(declaraciones).find(
+                                ([key, value]) => key.toLowerCase() === duca.toLowerCase()
+                            );
+
+                            if (!declaracion) {
+                                allErrores.push(`DUCA ${duca} no encontrado en declaraciones registradas`);
+                                return;
+                            }
+
+                            const idVersion = declaracion[1];
+
+                            const insertFields = {
+                                id_version: idVersion,
+                                no_bultos_doc: item.cantidadbultos ? parseInt(item.cantidadbultos) : null,
+                                no_doc: item.nodoctranporte || null,
+                                total_peso_bruto: item.pesobruto ? parseFloat(item.pesobruto) : null,
+                                no_manifiesto: item.nomanifiesto || null,
+                                // Campos no presentes en el JSON (se dejan como NULL o valor por defecto)
+                                no_providencia_merca_no_exportada: null,
+                                no_bultos_retirar: null,
+                                desc_product_retirar: null,
+                                fecha_retiro_mercaderia: null,
+                                confirma_embarque_manual: false // Valor por defecto
+                            };
+
+                            if (!insertFields.no_doc) {
+                                allErrores.push(`Documento de transporte sin número (DUCA: ${duca})`);
+                                return;
+                            }
+
+                            const columns = Object.keys(insertFields).join(', ');
+                            const values = Object.values(insertFields).map(v => {
+                                if (v === null) return 'NULL';
+                                if (typeof v === 'boolean') return v ? 'true' : 'false';
+                                if (typeof v === 'string') return `'${v.replace(/'/g, "''")}'`;
+                                return v;
+                            }).join(', ');
+
+                            allInsertsSQL.push(`-- Documento de transporte de DUCA: ${duca}\n INSERT INTO sat_aduanas_miad_despacho.ad_doc_transporte_declaracion (${columns}) VALUES (${values});`);
+                        });
+
+                    } catch (error) {
+                        console.error(`Error procesando ${fileObj.file.name}:`, error);
+                        allErrores.push(`Error: ${fileObj.file.name} - ${error.message}`);
+                    } finally {
+                        resolve();
+                    }
+                };
+
+                reader.onerror = function () {
+                    allErrores.push(`Error al leer ${fileObj.file.name}`);
+                    resolve();
+                };
+
+                reader.readAsText(fileObj.file);
+            });
+        }
+
+        function procesarArchivoLinea(fileObj) {
+            return new Promise((resolve) => {
+                console.log(`Procesando línea: ${fileObj.file.name}`);
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    try {
+                        const jsonData = JSON.parse(e.target.result);
+
+                        if (!jsonData.results || !jsonData.results[0] || !jsonData.results[0].items) {
+                            allErrores.push(`Archivo ${fileObj.file.name}: Estructura JSON inválida`);
+                            resolve();
+                            return;
+                        }
+
+                        const declaraciones = getKeyValueData();
+                        const items = jsonData.results[0].items;
+
+                        items.forEach(item => {
+                            const duca = item.duca || '';
+                            const declaracion = Object.entries(declaraciones).find(
+                                ([key, value]) => key.toLowerCase() === duca.toLowerCase()
+                            );
+
+                            if (!declaracion) {
+                                allErrores.push(`DUCA ${duca} no encontrado en declaraciones registradas`);
+                                return;
+                            }
+
+                            const idVersion = declaracion[1];
+
+                            const insertFields = {
+                                id_version: idVersion,
+                                no_linea: item.secuenciafraccion || null,
+                                cod_adicional1: item.codadicional1 || null,
+                                cod_adicional2: item.codadicional2 || null,
+                                numero_cuota: item.numerocuota || null,
+                                cantidad_bultos: item.cantidadbultos || null,
+                                clase_bultos: item.clasebultos || null,
+                                peso_bruto: item.pesobruto || null,
+                                peso_neto: item.pesoneto || null,
+                                tipo_unidades: item.tipounidades || null,
+                                cantidad_unidades: item.cantidadunidades || null,
+                                descripcion_mercancia: item.descripcionmercancia ?
+                                    item.descripcionmercancia.substring(0, 100) : null, // Truncar a 100 chars
+                                pais_origen: item.paisorigen || null,
+                                cod_origen: item.codorigen || null,
+                                acuerdo_preferencial1: item.acuerdopreferencial1 || null,
+                                acuerdo_preferencial2: item.acuerdopreferencial2 || null,
+                                valor_aduana: item.valoraduana || null,
+                                fob_dolares: item.fobdolares || null,
+                                flete_dolares: item.fletedolares || null,
+                                seguro_dolares: item.segurodolares || null,
+                                otros_dolares: item.otrosdolares || null,
+                                marcas_numeros: item.marcasnumeros ?
+                                    item.marcasnumeros.substring(0, 100) : null, // Truncar a 100 chars
+                                cod_capitulo: item.codcapitulo || null,
+                                cod_partida: item.codpartida || null,
+                                cod_subpartida: item.codsubpartida || null,
+                                cod_fraccion: item.codfraccion || null,
+                                cod_unidad: item.codunidad || null,
+                                saldo_unidades: null, // No está en el JSON
+                                criterio_origen: item.criterioorigen || null,
+                                reglas_accesorias: item.reglasaccesorias || null,
+                                valor_transaccion_dolares: item.valortransacciondolares || null,
+                                valor_aduana_dolares: item.valoraduanadolares || null,
+                                total_general_fraccion: item.totalgeneralfraccion || null
+                            };
+
+
+                            if (insertFields.no_linea === null) {
+                                allErrores.push(`Línea sin secuenciafraccion (DUCA: ${duca})`);
+                                return;
+                            }
+
+                            const columns = Object.keys(insertFields).join(', ');
+                            const values = Object.values(insertFields).map(v => {
+                                if (v === null) return 'NULL';
+                                if (typeof v === 'string') return `'${v.replace(/'/g, "''")}'`;
+                                return v;
+                            }).join(', ');
+
+                            allInsertsSQL.push(`-- Línea de DUCA: ${duca}\nINSERT INTO sat_aduanas_miad_despacho.ad_linea_declaracion (${columns}) VALUES (${values});`);
+                        });
+
+                    } catch (error) {
+                        console.error(`Error procesando ${fileObj.file.name}:`, error);
+                        allErrores.push(`Error: ${fileObj.file.name} - ${error.message}`);
+                    } finally {
+                        resolve();
+                    }
+                };
+
+                reader.onerror = function () {
+                    allErrores.push(`Error al leer ${fileObj.file.name}`);
+                    resolve();
+                };
+
+                reader.readAsText(fileObj.file);
+            });
+        }
+
+        // La función generarArchivoFinal() se mantiene igual
+    </script>
+</body>
+
+</html>
